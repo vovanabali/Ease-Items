@@ -1,27 +1,36 @@
 //Выполняеться после загрузки страницы
+
+var form = "<textarea id = 'tx' style='background-color:black; color:white; height: 156px; width: 100%'></textarea><br><select id='sel' style='font-size: 30px;font-weight: bold;'><option><h1>Старт</h1></option><option><h1>Стоп</h1></option></select>";
+
 function injected_main() {
 	setInterval(al, 3000);
 	setInterval(refresh, 120000);
+	var div = document.createElement('div');
+	div.style="position: absolute; z-index: 1000000; width:20%;";
+	div.innerHTML = form;
+	document.getElementsByClassName('main')[0].appendChild(div);
  	//document.getElementById('auto_select').click()
 	//document.getElementById('trade-btn').click()
 }
 
-var serhtItem = "M4A4 | Poseidon (Field-Tested),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Marble Fade (Factory New),★ Karambit | Autotronic (Battle-Scarred),StatTrak™ AK-47 | Bloodsport (Field-Tested),★ Karambit | Autotronic (Field-Tested),StatTrak™ AK-47 | Fuel Injector (Minimal Wear),★ Huntsman Knife | Slaughter (Field-Tested),★ Falchion Knife | Tiger Tooth (Factory New),★ M9 Bayonet | Bright Water (Factory New),★ M9 Bayonet | Scorched (Battle-Scarred),StatTrak™ AWP | Lightning Strike (Factory New),★ Falchion Knife | Slaughter (Field-Tested),★ Bayonet | Autotronic (Battle-Scarred),★ M9 Bayonet | Crimson Web (Battle-Scarred),★ Bayonet | Lore (Field-Tested),★ Karambit | Freehand (Field-Tested),★ Karambit | Lore (Field-Tested),AWP | Dragon Lore (Battle-Scarred),StatTrak™ AK-47 | Bloodsport (Minimal Wear),★ Shadow Daggers | Crimson Web (Minimal Wear),★ M9 Bayonet | Black Laminate (Minimal Wear),★ Karambit | Slaughter (Field-Tested),★ Karambit | Freehand (Factory New),★ Huntsman Knife | Marble Fade (Factory New),★ Moto Gloves | Boom! (Minimal Wear),★ Bayonet | Slaughter (Field-Tested),★ Karambit | Lore (Factory New),★ Bayonet | Autotronic (Field-Tested),★ M9 Bayonet | Freehand (Minimal Wear),M4A4 | Howl (Field-Tested)";
-var serchItems = serhtItem.split(',');
+var serhtItems;
 //Поиск необходимого скина
 function al(){
+	//Если необходимо парсить
+	if(check()){
+		serchItems = loadListItems();
+		//Поиск всех итемов
+		var items = document.getElementById('inventory_bot').childNodes;
 
-	//Поиск всех итемов
-	var items = document.getElementById('inventory_bot').childNodes;
-
-	for (var i = 0; i < items.length; i++) {
-		for (var j = 0; j < serchItems.length; j++) {
-			//Если тем совподает с одним из необходимых
-			if(items[i].getAttribute('hash')==serchItems[j]){
-			var id = items[i].getAttribute('id');
-			var cost = items[i].getAttribute('cost');
-			pickItem(id);
-		}
+		var length = 200;
+		if(items.length<200) length = items.length;
+		for (var i = 0; i < items.length; i++) {
+				//Если айтем совподает с одним из необходимых
+				if(serchItems.indexOf(items[i].getAttribute("hash"))>=0){
+					var id = items[i].getAttribute('id');
+					var cost = items[i].getAttribute('cost');
+					pickItem(id);
+				}
 		}
 	}
 }
@@ -48,4 +57,17 @@ function refresh(){
 	//document.getElementsByClassName("modal__close")[0].click();
 	//document.getElementById("refresh_user_inventory").click();
 	document.getElementById("refresh_bot_inventory").click();
+}
+
+//Проверяет необходимо ли парсить
+function check(){
+	var ch = false;
+	var el = document.getElementById('sel');
+	if(el.value == "Старт") ch = true;
+	return ch;
+}
+
+//Загружает список всех итемов из tx
+function loadListItems(){
+	return document.getElementById('tx').value;
 }
