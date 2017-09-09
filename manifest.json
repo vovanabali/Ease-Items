@@ -1,6 +1,6 @@
 {
   "name": "Ease Items",
-  "version": "1.0",
+  "version": "1.2",
   "icons":{
   	"48":"img/CsIcon.png",
   	"128":"img/CsIcon.png"
@@ -15,8 +15,5 @@
   ],
   "web_accessible_resources": [
     "/injected.js"
-  ],
-   "browser_action": {
-        "default_popup": "popup.html"
-    }
+  ]
 }
