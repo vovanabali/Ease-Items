@@ -1,5 +1,5 @@
 
-var serhtItem = "★ StatTrak™ Shadow Daggers | Fade (Factory New),★ Huntsman Knife | Crimson Web (Well-Worn),M4A1-S | Master Piece (Factory New),AWP | BOOM (Factory New),M4A4 | Poseidon (Field-Tested),★ Bowie Knife | Ultraviolet (Minimal Wear),StatTrak™ P2000 | Fire Elemental (Factory New),★ Butterfly Knife | Marble Fade (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Damascus Steel (Factory New),★ StatTrak™ M9 Bayonet | Boreal Forest (Field-Tested),★ StatTrak™ Flip Knife | Night (Field-Tested),★ Bowie Knife | Rust Coat (Battle-Scarred),★ Huntsman Knife | Ultraviolet (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),M4A4 | Poseidon (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Bayonet | Autotronic (Minimal Wear),★ Karambit | Case Hardened (Well-Worn),★ Karambit | Autotronic (Field-Tested),M4A1-S | Knight (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),AWP | Dragon Lore (Battle-Scarred),★ M9 Bayonet | Autotronic (Minimal Wear),★ Bayonet | Autotronic (Field-Tested),★ Karambit | Lore (Field-Tested),★ Bowie Knife | Crimson Web (Minimal Wear),★ Karambit | Slaughter (Field-Tested),★ Sport Gloves | Hedge Maze (Well-Worn),★ Karambit | Black Laminate (Minimal Wear),★ Karambit | Freehand (Field-Tested),StatTrak™ AWP | Oni Taiji (Minimal Wear),★ Huntsman Knife | Damascus Steel (Field-Tested),★ Bloodhound Gloves | Snakebite (Field-Tested),StatTrak™ AK-47 | Fuel Injector (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Karambit | Lore (Factory New)";
+var serhtItem = "★ Bayonet | Fade (Factory New),★ Huntsman Knife | Crimson Web (Well-Worn),M4A1-S | Master Piece (Factory New),AWP | BOOM (Factory New),M4A4 | Poseidon (Field-Tested),★ Bowie Knife | Ultraviolet (Minimal Wear),StatTrak™ P2000 | Fire Elemental (Factory New),★ Butterfly Knife | Marble Fade (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Damascus Steel (Factory New),★ StatTrak™ M9 Bayonet | Boreal Forest (Field-Tested),★ StatTrak™ Flip Knife | Night (Field-Tested),★ Bowie Knife | Rust Coat (Battle-Scarred),★ Huntsman Knife | Ultraviolet (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),M4A4 | Poseidon (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Bayonet | Autotronic (Minimal Wear),★ Karambit | Case Hardened (Well-Worn),★ Karambit | Autotronic (Field-Tested),M4A1-S | Knight (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),AWP | Dragon Lore (Battle-Scarred),★ M9 Bayonet | Autotronic (Minimal Wear),★ Bayonet | Autotronic (Field-Tested),★ Karambit | Lore (Field-Tested),★ Bowie Knife | Crimson Web (Minimal Wear),★ Karambit | Slaughter (Field-Tested),★ Sport Gloves | Hedge Maze (Well-Worn),★ Karambit | Black Laminate (Minimal Wear),★ Karambit | Freehand (Field-Tested),StatTrak™ AWP | Oni Taiji (Minimal Wear),★ Huntsman Knife | Damascus Steel (Field-Tested),★ Bloodhound Gloves | Snakebite (Field-Tested),StatTrak™ AK-47 | Fuel Injector (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Karambit | Lore (Factory New)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -15,8 +15,13 @@ function injected_main() {
 		idInterval2 = setInterval(refresh, 120000);
 	}
 
-	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
+	if(location.href.indexOf("https://stackoverflow.com")>-1 ){
+		if(window.name == "TempFromSound") 
+		soundPlay();
+		setTimeout(function(){window.close();},5000);
+	}
 
+	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
 		if(window.name == "SteamTradeOffers"){
 				var reLoad = true;
 				var offers = document.getElementsByClassName('tradeoffer');
@@ -28,7 +33,6 @@ function injected_main() {
 								reLoad = false;
 								var offerID = offers[i].getElementsByClassName('link_overlay')[0].getAttribute("onClick").split("'")[1];
 								window.open("https://steamcommunity.com/tradeoffer/"+offerID+"/",'SteamTrade',"location,width=10,height=10,top=0");
-
 								break;
 							} catch (err) {
 								reLoad = true;
@@ -114,9 +118,11 @@ function checkAut(idItem){
 
 //Выполняеться если скин найден
 function pickItem(idItem){
+
 		document.getElementById(idItem).click();
 		document.getElementById('auto_select').click();
 		document.getElementById('trade-btn').click();
+		var tempWindowSound = window.open('https://stackoverflow.com/questions','TempFromSound','width=1,height=2,status=no,toolbar=no,menubar=no');
 		checkAut(idItem);
 		//setTimeout(refresh,10000);
 }
@@ -126,4 +132,13 @@ function refresh(){
 	//document.getElementsByClassName("modal__close")[0].click();
 	//document.getElementById("refresh_user_inventory").click();
 	document.getElementById("refresh_bot_inventory").click();
+}
+
+function soundPlay(){
+	var myWin = window.open('', 'soundPlay', 'width=1,height=2,status=no,toolbar=no,menubar=no');
+	myWin.document.open();
+	var src = 'https://psv4.userapi.com/c815123/u248837725/audios/3723538f7377.mp3?extra=Q2mHop58idk42CaIeyI_-6HbZn4-s3ZeOwZ_ycODmN21dSKJA-3q2zA2lcH_tQWztfaeA3CSPNKtbsDhWmnODP1wgss-1_hbn3c4wXjxDyDPD8xvHXog3_Q_Z5sVL7969ySzQemaPNgPUko';
+	myWin.document.write("<script>var audio = new Audio(); audio.src = '"+src+"'; audio.autoplay = true;</script>");
+
+	setTimeout(function(){myWin.close();},4000);
 }
