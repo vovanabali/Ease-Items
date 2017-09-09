@@ -11,13 +11,11 @@ var steamWindow;
 function injected_main() {
 
 	if(location.href == "https://cs.money/ru") {
-		idInterval1 = setInterval(al, 3000);
+		idInterval1 = setInterval(al, 1000);
 		idInterval2 = setInterval(refresh, 120000);
 	}
 	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
 		var reLoad = true;
-		idIntervalFromSteam = setInterval(
-			function(){
 				var offers = document.getElementsByClassName('tradeoffer');
 				if(offers.length>0){
 					for (var i = 0; i < offers.length; i++) {
@@ -26,8 +24,8 @@ function injected_main() {
 							try {
 								reLoad = false;
 								var offerID = offers[i].getElementsByClassName('link_overlay')[0].getAttribute("onClick").split("'")[1];
-								window.open("https://steamcommunity.com/tradeoffer/"+offerID+"/");
-								clearInterval(idIntervalFromSteam);
+								window.open("https://steamcommunity.com/tradeoffer/"+offerID+"/",'rr',"location,width=10,height=10,top=0");
+
 								break;
 							} catch (err) {
 								reLoad = true;
@@ -44,7 +42,6 @@ function injected_main() {
 				if(reLoad){
 					location.reload();
 				}
-		},2000);
 	}
 	if(location.href.indexOf("tradeoffer")>-1 ){
 		ToggleReady( true );
@@ -106,7 +103,7 @@ function checkAut(idItem){
 	var responseDiv = document.getElementById('trade-popup');
 	responseDiv.getElementsByClassName('modal__title')[0].innerHTML = responseStr;
 	responseDiv.getElementsByClassName('modal__subtitle')[0].innerHTML = nameItem;
-	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/");},500);
+	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'rr',"location,width=10,height=10,top=0");},500);
 	setTimeout(function(){steamWindow.close();},25000);
 }
 
