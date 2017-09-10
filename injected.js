@@ -47,15 +47,16 @@ function injected_main() {
 					}
 				}
 				else{
-					location.reload();
+					setTimeout(function(){location.reload();},1500);
 				}
 				if(reLoad){
-					location.reload();
+					setTimeout(function(){location.reload();},1500);
 				}
 		}
 	}
 
 	if(location.href.indexOf("tradeoffer")>-1 ){
+		if(window.name.indexOf('SteamTrade')>-1){
 			ToggleReady( true );
 
 			document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
@@ -64,6 +65,7 @@ function injected_main() {
 			setTimeout(function(){
 				window.close();
 			},1500);
+		}
 	}
 }
 
@@ -76,7 +78,7 @@ function al(){
 			//Поиск всех итемов
 	var items = document.getElementById('inventory_bot').childNodes;
 
-	for (var i = 0; i < items.length; i++) {
+	for (var i = 0; i < 100; i++) {
 		for (var j = 0; j < serchItems.length; j++) {
 			//Если тем совподает с одним из необходимых
 			if(items[i].getAttribute('hash')==serchItems[j]){
