@@ -1,5 +1,5 @@
 
-var serhtItem = "★ Karambit | Night (Battle-Scarred),★ Huntsman Knife | Crimson Web (Well-Worn),M4A1-S | Master Piece (Factory New),AWP | BOOM (Factory New),M4A4 | Poseidon (Field-Tested),★ Bowie Knife | Ultraviolet (Minimal Wear),StatTrak™ P2000 | Fire Elemental (Factory New),★ Butterfly Knife | Marble Fade (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Damascus Steel (Factory New),★ StatTrak™ M9 Bayonet | Boreal Forest (Field-Tested),★ StatTrak™ Flip Knife | Night (Field-Tested),★ Bowie Knife | Rust Coat (Battle-Scarred),★ Huntsman Knife | Ultraviolet (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),M4A4 | Poseidon (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Bayonet | Autotronic (Minimal Wear),★ Karambit | Case Hardened (Well-Worn),★ Karambit | Autotronic (Field-Tested),M4A1-S | Knight (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),AWP | Dragon Lore (Battle-Scarred),★ M9 Bayonet | Autotronic (Minimal Wear),★ Bayonet | Autotronic (Field-Tested),★ Karambit | Lore (Field-Tested),★ Bowie Knife | Crimson Web (Minimal Wear),★ Karambit | Slaughter (Field-Tested),★ Sport Gloves | Hedge Maze (Well-Worn),★ Karambit | Black Laminate (Minimal Wear),★ Karambit | Freehand (Field-Tested),StatTrak™ AWP | Oni Taiji (Minimal Wear),★ Huntsman Knife | Damascus Steel (Field-Tested),★ Bloodhound Gloves | Snakebite (Field-Tested),StatTrak™ AK-47 | Fuel Injector (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Karambit | Lore (Factory New)";
+var serhtItem = "M4A4 | Poseidon (Field-Tested),★ StatTrak™ Karambit | Safari Mesh (Field-Tested),★ Bowie Knife | Ultraviolet (Minimal Wear),★ Shadow Daggers | Damascus Steel (Minimal Wear),★ Huntsman Knife | Crimson Web (Well-Worn),M4A1-S | Master Piece (Factory New),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Marble Fade (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ StatTrak™ M9 Bayonet | Boreal Forest (Field-Tested),★ Bowie Knife | Tiger Tooth (Factory New),★ Karambit | Autotronic (Minimal Wear),★ M9 Bayonet | Bright Water (Minimal Wear),AUG | Akihabara Accept (Minimal Wear),StatTrak™ M4A4 | Desolate Space (Factory New),★ Bowie Knife | Marble Fade (Factory New),★ StatTrak™ Falchion Knife | Night (Field-Tested),M4A1-S | Knight (Factory New),★ Bowie Knife | Slaughter (Factory New),M4A4 | Poseidon (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Flip Knife | Crimson Web (Minimal Wear),★ Flip Knife | Lore (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),★ Karambit | Autotronic (Field-Tested),★ Bayonet | Autotronic (Field-Tested),★ Bayonet | Autotronic (Minimal Wear),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Black Laminate (Minimal Wear),★ Specialist Gloves | Crimson Kimono (Well-Worn),★ Sport Gloves | Arid (Minimal Wear)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -7,6 +7,14 @@ var idInterval2 =0;
 var idIntervalFromSteam = 0;
 
 var steamWindow;
+
+	if(location.href.indexOf("tryskins")>-1){
+		if(window.name.indexOf("CheckItem")>-1){
+			setTimeout(function(){soundPlay()},1);
+			checkOnTrySkins();
+		}
+	}
+
 //Выполняеться после загрузки страницы
 function injected_main() {
 
@@ -27,6 +35,7 @@ function injected_main() {
 								reLoad = false;
 								var offerID = offers[i].getElementsByClassName('link_overlay')[0].getAttribute("onClick").split("'")[1];
 								window.open("https://steamcommunity.com/tradeoffer/"+offerID+"/",'SteamTrade',"location,width=10,height=10,top=0");
+								window.close();
 								break;
 							} catch (err) {
 								reLoad = true;
@@ -47,19 +56,14 @@ function injected_main() {
 	}
 
 	if(location.href.indexOf("tradeoffer")>-1 ){
-		ToggleReady( true );
+			ToggleReady( true );
 
-		document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
+			document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
 
-		ConfirmTradeOffer();
-		setTimeout(function(){window.close();},2000);
-	}
-
-	if(location.href.indexOf("tryskins")>-1){
-		if(window.name.indexOf("CheckItem")>-1){
-			setTimeout(function(){soundPlay()},1);
-			checkOnTrySkins();
-		}
+			ConfirmTradeOffer();
+			setTimeout(function(){
+				window.close();
+			},1500);
 	}
 }
 
@@ -89,7 +93,6 @@ function al(){
 //Проверка автоподбора
 function checkAut(idItem){
 
-	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
 	var count = idItem.split('|').length;
 	if(idItem.split('|').length>1){
 		var temp = idItem.split('|')[0]
@@ -111,7 +114,9 @@ function checkAut(idItem){
 	var costOwerPay = costIm - costItem;
 
 	var nameWindow = "CheckItem+"+nameItem+"+"+costItem+"+"+costOwerPay;
-	window.open("http://tryskins.ru/site/skin-search",nameWindow);
+	setTimeout(function(){window.open("http://tryskins.ru/site/skin-search",nameWindow)},1) ;
+
+	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
 
 	var responseStr = isThisItem+' , стоит: '+costItem+'$ Переплата: '+costOwerPay.toFixed(3)+'$'+' Кол-во: '+ count;
 
