@@ -1,6 +1,6 @@
 {
   "name": "Ease Items",
-  "version": "2.1",
+  "version": "2.5",
   "icons":{
     "48":"img/CsIcon.png",
     "128":"img/CsIcon.png"
@@ -8,7 +8,7 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": [ "https://cs.money/ru","http://steamcommunity.com/profiles/*/tradeoffers/","https://steamcommunity.com/tradeoffer/*","https://stackoverflow.com/*"],
+      "matches": [ "https://cs.money/ru","http://steamcommunity.com/profiles/*/tradeoffers/","https://steamcommunity.com/tradeoffer/*", "http://tryskins.ru/*"],
       "js": [ "js/jquery.js", "js/background.js" ],
     "run_at": "document_end"
     }
