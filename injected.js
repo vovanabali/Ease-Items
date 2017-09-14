@@ -1,5 +1,5 @@
 
-var serhtItem = "M4A4 | Poseidon (Field-Tested),★ StatTrak™ Karambit | Safari Mesh (Field-Tested),★ Bowie Knife | Ultraviolet (Minimal Wear),★ Shadow Daggers | Damascus Steel (Minimal Wear),★ Huntsman Knife | Crimson Web (Well-Worn),M4A1-S | Master Piece (Factory New),★ StatTrak™ Huntsman Knife | Urban Masked (Field-Tested),★ Butterfly Knife | Marble Fade (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ StatTrak™ M9 Bayonet | Boreal Forest (Field-Tested),★ Bowie Knife | Tiger Tooth (Factory New),★ Karambit | Autotronic (Minimal Wear),★ M9 Bayonet | Bright Water (Minimal Wear),AUG | Akihabara Accept (Minimal Wear),StatTrak™ M4A4 | Desolate Space (Factory New),★ Bowie Knife | Marble Fade (Factory New),★ StatTrak™ Falchion Knife | Night (Field-Tested),M4A1-S | Knight (Factory New),★ Bowie Knife | Slaughter (Factory New),M4A4 | Poseidon (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Flip Knife | Crimson Web (Minimal Wear),★ Flip Knife | Lore (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),★ Karambit | Autotronic (Field-Tested),★ Bayonet | Autotronic (Field-Tested),★ Bayonet | Autotronic (Minimal Wear),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Black Laminate (Minimal Wear),★ Specialist Gloves | Crimson Kimono (Well-Worn),★ Sport Gloves | Arid (Minimal Wear)";
+var serhtItem = "★ Karambit | Marble Fade (Factory New),★ Butterfly Knife | Marble Fade (Factory New),★ Bayonet | Lore (Minimal Wear),★ Gut Knife | Autotronic (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Damascus Steel (Factory New),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),M4A4 | Poseidon (Minimal Wear),★ Specialist Gloves | Foundation (Battle-Scarred),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Blue Steel (Well-Worn),★ Shadow Daggers | Marble Fade (Factory New),★ Karambit | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Karambit | Bright Water (Factory New),★ Flip Knife | Lore (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Karambit | Autotronic (Field-Tested),★ Falchion Knife | Tiger Tooth (Factory New)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -19,8 +19,18 @@ var steamWindow;
 function injected_main() {
 
 	if(location.href == "https://cs.money/ru") {
-		idInterval1 = setInterval(al, 1000);
-		idInterval2 = setInterval(refresh, 120000);
+
+		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
+		if(nick.indexOf("cs.money")<0){
+			alert("Отсутствует ник");
+		}
+
+		/*setTimeout(function(){
+			document.getElementById("price-input-min").value = 150;
+			document.getElementById("price-input-max").value = 350;
+		},7000);*/
+		idInterval1 = setInterval(al, 500);
+		idInterval2 = setInterval(refresh, 4500);
 	}
 
 	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
@@ -74,11 +84,13 @@ var serchItems = serhtItem.split(',');
 function al(){
 
 	//Если инвентарь прогрузился 
-	if(document.getElementById('inventory_user').childNodes.length > 1){
-			//Поиск всех итемов
+	if(document.getElementById('inventory_user').childNodes.length > 0){
+	//Поиск всех итемов
 	var items = document.getElementById('inventory_bot').childNodes;
 
-	for (var i = 0; i < 100; i++) {
+	//alert(items.length);
+
+	for (var i = 0; i < items.length; i++) {
 		for (var j = 0; j < serchItems.length; j++) {
 			//Если тем совподает с одним из необходимых
 			if(items[i].getAttribute('hash')==serchItems[j]){
@@ -115,7 +127,15 @@ function checkAut(idItem){
 	var costIm = document.getElementById('currency_user').innerHTML;
 	var costOwerPay = costIm - costItem;
 
-	var nameWindow = "CheckItem+"+nameItem+"+"+costItem+"+"+costOwerPay;
+	var overPayFloat;
+	var item = document.getElementById(idItem);
+		if(item.getAttribute("ar") == 1){
+			overPayFloat = "1";
+		}else{
+			overPayFloat = "0"
+		}
+		alert(overPayFloat);
+	var nameWindow = "CheckItem+"+nameItem+"+"+costItem+"+"+costOwerPay+"+"+overPayFloat;
 	setTimeout(function(){window.open("http://tryskins.ru/site/skin-search",nameWindow)},1) ;
 
 	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
@@ -132,6 +152,7 @@ function checkAut(idItem){
 function pickItem(idItem){
 
 		document.getElementById(idItem).click();
+		document.getElementById("price-input-min").value = 0;
 		document.getElementById('auto_select').click();
 		document.getElementById('trade-btn').click();
 		checkAut(idItem);
@@ -158,6 +179,25 @@ function checkOnTrySkins(){
 
 	var itemName = window.name.split('+')[1];
 	var countItem = window.name.split('+')[2];
+	var overPay =  window.name.split('+')[3]*1;
+	var floatOverPay = window.name.split('+')[4]*1;
+	var luseMoney = overPay- overPay*0.97;
+
+	document.getElementsByClassName("btn btn-success")[0].innerHTML = "Переплата = "+overPay.toFixed(2)+"$. Потеря =  "+luseMoney.toFixed(2)+"$";
+
+	if(overPay<=10){
+		document.getElementById("page-wrapper").style.backgroundColor = "green";
+	}else{
+		if(overPay<=30){
+			document.getElementById("page-wrapper").style.backgroundColor = "yellow";
+		}else{
+			document.getElementById("page-wrapper").style.backgroundColor = "red";
+		}
+	}
+
+	if(floatOverPay===1){
+		document.getElementById("page-wrapper").style.backgroundColor = "sienna";
+	}
 
 	var input = document.getElementById('w0');
 	input.value = itemName;
