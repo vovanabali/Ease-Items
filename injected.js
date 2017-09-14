@@ -1,5 +1,5 @@
 
-var serhtItem = "★ Karambit | Marble Fade (Factory New),★ Butterfly Knife | Marble Fade (Factory New),★ Bayonet | Lore (Minimal Wear),★ Gut Knife | Autotronic (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Damascus Steel (Factory New),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),M4A4 | Poseidon (Minimal Wear),★ Specialist Gloves | Foundation (Battle-Scarred),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Blue Steel (Well-Worn),★ Shadow Daggers | Marble Fade (Factory New),★ Karambit | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Karambit | Bright Water (Factory New),★ Flip Knife | Lore (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Karambit | Autotronic (Field-Tested),★ Falchion Knife | Tiger Tooth (Factory New)";
+var serhtItem = "★ Butterfly Knife | Marble Fade (Factory New),★ Bayonet | Lore (Minimal Wear),★ Gut Knife | Autotronic (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Damascus Steel (Factory New),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),M4A4 | Poseidon (Minimal Wear),★ Specialist Gloves | Foundation (Battle-Scarred),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Blue Steel (Well-Worn),★ Shadow Daggers | Marble Fade (Factory New),★ Karambit | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Karambit | Bright Water (Factory New),★ Flip Knife | Lore (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Karambit | Autotronic (Field-Tested),★ Falchion Knife | Tiger Tooth (Factory New)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -134,7 +134,7 @@ function checkAut(idItem){
 		}else{
 			overPayFloat = "0"
 		}
-		alert(overPayFloat);
+		
 	var nameWindow = "CheckItem+"+nameItem+"+"+costItem+"+"+costOwerPay+"+"+overPayFloat;
 	setTimeout(function(){window.open("http://tryskins.ru/site/skin-search",nameWindow)},1) ;
 
