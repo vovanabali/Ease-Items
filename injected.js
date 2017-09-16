@@ -1,7 +1,7 @@
 
 var serhtItem = "★ Bowie Knife | Ultraviolet (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),★ Bayonet | Lore (Minimal Wear),M4A4 | Poseidon (Minimal Wear),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Shadow Daggers | Marble Fade (Factory New),★ Specialist Gloves | Foundation (Battle-Scarred),★ Shadow Daggers | Tiger Tooth (Factory New),★ Karambit | Blue Steel (Well-Worn),★ Flip Knife | Lore (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Sport Gloves | Hedge Maze (Battle-Scarred),★ Karambit | Slaughter (Field-Tested),★ M9 Bayonet | Slaughter (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),★ Karambit | Damascus Steel (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ Falchion Knife | Ultraviolet (Minimal Wear),★ Shadow Daggers | Damascus Steel (Minimal Wear),AK-47 | Jet Set (Minimal Wear),M4A4 | Poseidon (Field-Tested),★ Huntsman Knife | Crimson Web (Well-Worn),★ Gut Knife | Safari Mesh (Well-Worn),★ Gut Knife | Boreal Forest (Well-Worn),Five-SeveN | Hyper Beast (Factory New),★ Gut Knife | Boreal Forest (Battle-Scarred),StatTrak™ Desert Eagle | Golden Koi (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),★ Shadow Daggers | Boreal Forest (Well-Worn),★ Huntsman Knife | Safari Mesh (Well-Worn),★ Gut Knife | Safari Mesh (Battle-Scarred),AK-47 | Fuel Injector (Factory New),AUG | Akihabara Accept (Field-Tested),★ Butterfly Knife | Night (Well-Worn),★ Falchion Knife | Rust Coat (Battle-Scarred),★ Gut Knife | Ultraviolet (Battle-Scarred),★ Flip Knife | Scorched (Well-Worn),M4A1-S | Icarus Fell (Minimal Wear),★ Gut Knife | Urban Masked (Well-Worn),★ Bayonet | Bright Water (Minimal Wear)";
 
-var raffleDoplers = "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH_9mkgL-OlvD4NoTSmXlD58F0hNbN_Iv9nBrhrRc5YTqgJdWcIA48M1iF81m8wurrgMW76s_LmydguSRwtn3VmUThn1gSOZyN_0a1 -9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkIWKg__nO77QklRc7cF4n-SP94qsjVfi80VoN2CnJIOdcFM8ZA3X_gDqk-7n0ce46JvNmiMwsnYg4mGdwUL-I5iXGg";
+var raffleDoplers = "";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -220,9 +220,13 @@ function checkOnTrySkins(){
 	//alert('Название: '+ itemName +' Стоит: '+countItem);
 }
 var timerRaffle;
+var refreshInventory;
 var checkTradeConfirmInterval;
 function raffl() {
 	timerRaffle = setInterval(rafflePick,1000);
+	refreshInventory = setInterval(function(){
+		document.getElementsByClassName("refresh")[1].click();
+	},5000);
 }
 
 
@@ -241,6 +245,7 @@ function rafflePick() {
 			if(raffleDoplers.indexOf(src)>-1){
 				k= false;
 				clearInterval(timerRaffle);
+				clearInterval(refreshInventory);
 				botsInventory[i].click();
 				console.log(src);
 				//document.getElementsByClassName("auto-select-button")[0].click();
@@ -249,7 +254,6 @@ function rafflePick() {
 				checkTradeConfirmInterval = setInterval(checkTradeConfirm,1000);
 			}
 		}
-		if(k) document.getElementsByClassName("refresh")[1].click();
 		//document.getElementsByClassName("inventoryContent")[1].getElementsByClassName("inventoryItemContainer")[0].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src")
 	}
 }
