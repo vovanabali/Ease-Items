@@ -1,5 +1,7 @@
 
-var serhtItem = "★ Butterfly Knife | Marble Fade (Factory New),★ Bayonet | Lore (Minimal Wear),★ Gut Knife | Autotronic (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Damascus Steel (Factory New),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),M4A4 | Poseidon (Minimal Wear),★ Specialist Gloves | Foundation (Battle-Scarred),★ Gut Knife | Lore (Minimal Wear),★ Karambit | Blue Steel (Well-Worn),★ Shadow Daggers | Marble Fade (Factory New),★ Karambit | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Karambit | Bright Water (Factory New),★ Flip Knife | Lore (Minimal Wear),★ M9 Bayonet | Freehand (Factory New),★ Karambit | Autotronic (Field-Tested),★ Falchion Knife | Tiger Tooth (Factory New)";
+var serhtItem = "★ Bowie Knife | Ultraviolet (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),★ Bayonet | Lore (Minimal Wear),M4A4 | Poseidon (Minimal Wear),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Shadow Daggers | Marble Fade (Factory New),★ Specialist Gloves | Foundation (Battle-Scarred),★ Shadow Daggers | Tiger Tooth (Factory New),★ Karambit | Blue Steel (Well-Worn),★ Flip Knife | Lore (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Sport Gloves | Hedge Maze (Battle-Scarred),★ Karambit | Slaughter (Field-Tested),★ M9 Bayonet | Slaughter (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),★ Karambit | Damascus Steel (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ Falchion Knife | Ultraviolet (Minimal Wear),★ Shadow Daggers | Damascus Steel (Minimal Wear),AK-47 | Jet Set (Minimal Wear),M4A4 | Poseidon (Field-Tested),★ Huntsman Knife | Crimson Web (Well-Worn),★ Gut Knife | Safari Mesh (Well-Worn),★ Gut Knife | Boreal Forest (Well-Worn),Five-SeveN | Hyper Beast (Factory New),★ Gut Knife | Boreal Forest (Battle-Scarred),StatTrak™ Desert Eagle | Golden Koi (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),★ Shadow Daggers | Boreal Forest (Well-Worn),★ Huntsman Knife | Safari Mesh (Well-Worn),★ Gut Knife | Safari Mesh (Battle-Scarred),AK-47 | Fuel Injector (Factory New),AUG | Akihabara Accept (Field-Tested),★ Butterfly Knife | Night (Well-Worn),★ Falchion Knife | Rust Coat (Battle-Scarred),★ Gut Knife | Ultraviolet (Battle-Scarred),★ Flip Knife | Scorched (Well-Worn),M4A1-S | Icarus Fell (Minimal Wear),★ Gut Knife | Urban Masked (Well-Worn),★ Bayonet | Bright Water (Minimal Wear)";
+
+var raffleDoplers = "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH_9mkgL-OlvD4NoTSmXlD58F0hNbN_Iv9nBrhrRc5YTqgJdWcIA48M1iF81m8wurrgMW76s_LmydguSRwtn3VmUThn1gSOZyN_0a1 -9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkIWKg__nO77QklRc7cF4n-SP94qsjVfi80VoN2CnJIOdcFM8ZA3X_gDqk-7n0ce46JvNmiMwsnYg4mGdwUL-I5iXGg";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -15,22 +17,9 @@ var steamWindow;
 		}
 	}
 
-//Выполняеться после загрузки страницы
-function injected_main() {
-
-	if(location.href == "https://cs.money/ru") {
-
-		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
-		if(nick.indexOf("cs.money")<0){
-			alert("Отсутствует ник");
-		}
-
-		/*setTimeout(function(){
-			document.getElementById("price-input-min").value = 150;
-			document.getElementById("price-input-max").value = 350;
-		},7000);*/
-		idInterval1 = setInterval(al, 500);
-		idInterval2 = setInterval(refresh, 4500);
+	if(location.href.indexOf("raffletrades")>-1){
+		console.log("Is Work");
+		raffl();
 	}
 
 	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
@@ -40,7 +29,13 @@ function injected_main() {
 				if(offers.length>0){
 					for (var i = 0; i < offers.length; i++) {
 						var nameBot = offers[i].getElementsByClassName('tradeoffer_header')[0].innerHTML;
-						if(nameBot.indexOf("CS.MONEY")>-1) {
+						var countMyItems;
+						try{
+							countMyItems = offers[i].childNodes[7].childNodes[7].childNodes[5].getElementsByClassName("trade_item ").length;
+						}catch(err){
+							countMyItems = 0
+						}
+						if((nameBot.indexOf("CS.MONEY")>-1) || (countMyItems==0)){
 							try {
 								reLoad = false;
 								var offerID = offers[i].getElementsByClassName('link_overlay')[0].getAttribute("onClick").split("'")[1];
@@ -65,11 +60,14 @@ function injected_main() {
 		}
 	}
 
+
 	if(location.href.indexOf("tradeoffer")>-1 ){
 		if(window.name.indexOf('SteamTrade')>-1){
 			ToggleReady( true );
 
-			document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
+			try{
+				document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
+			}catch(err){}
 
 			ConfirmTradeOffer();
 			setTimeout(function(){
@@ -77,8 +75,21 @@ function injected_main() {
 			},1500);
 		}
 	}
+
+//Выполняеться после загрузки страницы
+function injected_main() {
+	if(location.href == "https://cs.money/ru") {
+
+		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
+		if(nick.indexOf("cs.money")<0){
+			alert("Отсутствует ник");
+		}
+		idInterval1 = setInterval(al, 500);
+		//idInterval2 = setInterval(refresh, 4500);
+	}
 }
 
+var ref = true;
 var serchItems = serhtItem.split(',');
 //Поиск необходимого скина
 function al(){
@@ -99,9 +110,11 @@ function al(){
 				clearInterval(idInterval1);
 				clearInterval(idInterval2);
 				pickItem(id);
+				ref = false;
 			}
 		}
 	}
+	if(ref)refresh();
 	}
 }
 //Проверка автоподбора
@@ -167,7 +180,7 @@ function refresh(){
 }
 
 function soundPlay(){
-	var src = 'https://psv4.userapi.com/c815123/u248837725/audios/3723538f7377.mp3?extra=Q2mHop58idk42CaIeyI_-6HbZn4-s3ZeOwZ_ycODmN21dSKJA-3q2zA2lcH_tQWztfaeA3CSPNKtbsDhWmnODP1wgss-1_hbn3c4wXjxDyDPD8xvHXog3_Q_Z5sVL7969ySzQemaPNgPUko';
+	var src = 'https://psv4.userapi.com/c815522/u155818115/audios/45a72ad5c658.mp3?extra=Nr3E8Fhyvy2FpJ-UqywFn5oDpAMle6qVpa8mL2RlJW54qb-2Qx8tXAVvZscsuiDV3cA985iU4wa-3vAKWtbYFnxhx3Nr5idKrEKquJxOK74ZzGBYyUiRIz5dIhpcZAu1-0g0pG8iWP0hqeQ';
 	var audio = new Audio(); 
 	audio.src = src; 
 	audio.autoplay = true; 
@@ -206,3 +219,53 @@ function checkOnTrySkins(){
 	document.getElementsByTagName('button')[0].click();
 	//alert('Название: '+ itemName +' Стоит: '+countItem);
 }
+var timerRaffle;
+var checkTradeConfirmInterval;
+function raffl() {
+	timerRaffle = setInterval(rafflePick,1000);
+}
+
+
+function rafflePick() {
+	var myInventory = document.getElementsByClassName("inventoryContent")[0].getElementsByClassName("inventoryItemContainer");
+	var botsInventory = document.getElementsByClassName("inventoryContent")[1].getElementsByClassName("inventoryItemContainer");
+
+	if(botsInventory.length>10){
+		/*var loadAllItemsBots = document.getElementsByClassName("box-content maximize")[1];
+		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;*/// -- Скролит Div до конца
+
+		console.log(botsInventory.length);
+		var k = true;
+		for(var i = 0; i<botsInventory.length;i++){
+			var src = botsInventory[i].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src").split("image/")[1].split("/")[0];
+			if(raffleDoplers.indexOf(src)>-1){
+				k= false;
+				clearInterval(timerRaffle);
+				botsInventory[i].click();
+				console.log(src);
+				//document.getElementsByClassName("auto-select-button")[0].click();
+				document.getElementsByClassName("trade-button")[0].click();
+				setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
+				checkTradeConfirmInterval = setInterval(checkTradeConfirm,1000);
+			}
+		}
+		if(k) document.getElementsByClassName("refresh")[1].click();
+		//document.getElementsByClassName("inventoryContent")[1].getElementsByClassName("inventoryItemContainer")[0].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src")
+	}
+}
+
+function checkTradeConfirm(){
+	var modalWindow = document.getElementsByTagName("ngb-modal-window")[0];
+	var textInModalWindow = modalWindow.getElementsByClassName("panel-body")[0].getElementsByClassName("text-center")[0].childNodes[1].innerHTML;
+	if(textInModalWindow == "YOU HAVE NO PENDING TRADES."){
+		location.reload();
+		/*document.getElementsByClassName("btn btn-default")[0].click();
+		document.getElementsByClassName("refresh")[1].click();
+		setTimeout(function(){
+			clearInterval(checkTradeConfirmInterval);
+			raffl();
+		},2000);*/
+	}
+}
+
+	

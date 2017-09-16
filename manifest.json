@@ -1,6 +1,6 @@
 {
   "name": "Ease Items",
-  "version": "2.5",
+  "version": "3.0",
   "icons":{
     "48":"img/CsIcon.png",
     "128":"img/CsIcon.png"
@@ -8,12 +8,15 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": [ "https://cs.money/ru","http://steamcommunity.com/profiles/*/tradeoffers/","https://steamcommunity.com/tradeoffer/*", "http://tryskins.ru/*"],
+      "matches": [ "https://cs.money/ru","http://steamcommunity.com/profiles/*/tradeoffers/","https://steamcommunity.com/tradeoffer/*", "http://tryskins.ru/*","https://www.raffletrades.com/*"],
       "js": [ "js/jquery.js", "js/background.js" ],
     "run_at": "document_end"
     }
   ],
   "web_accessible_resources": [
     "/injected.js"
-  ]
+  ],
+  "browser_action":{
+  	"default_icon":"img/CsIcon.png"
+  }
 }
