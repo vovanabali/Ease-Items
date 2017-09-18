@@ -4,7 +4,7 @@ var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife
 //Предметы для raffle
 var raffleDoplers = "";
 //Предметы для TSF
-var tradeskinsfastITEMS="P2000 | Turf (Battle-Scarred)";
+var tradeskinsfastITEMS="Sawed-Off | Zander (Minimal Wear)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -300,6 +300,14 @@ var reloadSite = true;
 function loadAllSkins(){
 	loadAllItemsBots = document.getElementById("botinventory");
 	if(loadAllItemsBots.childNodes.length){
+
+		var price = document.getElementById("userbalance").innerHTML*1;
+
+		if(price<1) {
+			clearInterval(setInt);
+			alert("Баланс закончился! =)");
+		};
+
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
 		price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
 		lengthSkins = loadAllItemsBots.childNodes.length;
@@ -320,17 +328,18 @@ function loadAllSkins(){
 function tradeskinsfastCheck(){
 	//clearInterval(tradeskinsfastInterval);
 		//loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
-price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
+	price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
 	console.time('test');
 	var items = loadAllItemsBots.getElementsByClassName("item");
 	var itemsCheckTSF = tradeskinsfastITEMS.split(",");
 	for(var i = startPosition; i<lengthSkins;i++){
 		for(var j = 0; j<itemsCheckTSF.length;j++){
-			var price = items[i].getElementsByClassName("price")[0].innerHTML;
+			var price = items[i].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
 			var name = items[i].getElementsByClassName("pic")[0].childNodes[0].getAttribute("alt");
 			var priceItem = document.getElementById("userbalance").innerHTML*1;
 			//alert(priceItem);
 			if(itemsCheckTSF[j]==name && price<priceItem){
+				console.log("Цена = "+price+" Баланс = "+priceItem);
 				clearInterval(setInt);
 				pickItemTSF(items[i]);
 				reloadSite = false;
