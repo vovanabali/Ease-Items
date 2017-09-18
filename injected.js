@@ -1,7 +1,10 @@
 
-var serhtItem = "★ Bowie Knife | Ultraviolet (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),★ Bayonet | Lore (Minimal Wear),M4A4 | Poseidon (Minimal Wear),★ Karambit | Autotronic (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),★ Shadow Daggers | Marble Fade (Factory New),★ Specialist Gloves | Foundation (Battle-Scarred),★ Shadow Daggers | Tiger Tooth (Factory New),★ Karambit | Blue Steel (Well-Worn),★ Flip Knife | Lore (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),★ Sport Gloves | Hedge Maze (Battle-Scarred),★ Karambit | Slaughter (Field-Tested),★ M9 Bayonet | Slaughter (Field-Tested),★ Huntsman Knife | Tiger Tooth (Factory New),★ Karambit | Damascus Steel (Factory New),★ Gut Knife | Bright Water (Minimal Wear),★ Falchion Knife | Ultraviolet (Minimal Wear),★ Shadow Daggers | Damascus Steel (Minimal Wear),AK-47 | Jet Set (Minimal Wear),M4A4 | Poseidon (Field-Tested),★ Huntsman Knife | Crimson Web (Well-Worn),★ Gut Knife | Safari Mesh (Well-Worn),★ Gut Knife | Boreal Forest (Well-Worn),Five-SeveN | Hyper Beast (Factory New),★ Gut Knife | Boreal Forest (Battle-Scarred),StatTrak™ Desert Eagle | Golden Koi (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),StatTrak™ M4A4 | Desolate Space (Factory New),★ Shadow Daggers | Boreal Forest (Well-Worn),★ Huntsman Knife | Safari Mesh (Well-Worn),★ Gut Knife | Safari Mesh (Battle-Scarred),AK-47 | Fuel Injector (Factory New),AUG | Akihabara Accept (Field-Tested),★ Butterfly Knife | Night (Well-Worn),★ Falchion Knife | Rust Coat (Battle-Scarred),★ Gut Knife | Ultraviolet (Battle-Scarred),★ Flip Knife | Scorched (Well-Worn),M4A1-S | Icarus Fell (Minimal Wear),★ Gut Knife | Urban Masked (Well-Worn),★ Bayonet | Bright Water (Minimal Wear)";
-
+//Список для cs.money
+var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife | Ultraviolet (Minimal Wear),M4A4 | Poseidon (Field-Tested),M4A4 | Poseidon (Minimal Wear),M4A4 | Poseidon (Minimal Wear),StatTrak™ AK-47 | Neon Revolution (Factory New),★ Flip Knife | Crimson Web (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Gut Knife | Lore (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),StatTrak™ AK-47 | Case Hardened (Factory New),★ Bowie Knife | Night (Minimal Wear),★ Bayonet | Lore (Minimal Wear),★ M9 Bayonet | Crimson Web (Minimal Wear),AK-47 | Fire Serpent (Battle-Scarred),★ Flip Knife | Lore (Factory New),AK-47 | Fire Serpent (Well-Worn),★ Flip Knife | Slaughter (Field-Tested),★ StatTrak™ M9 Bayonet | Ultraviolet (Field-Tested),★ Bayonet | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),★ M9 Bayonet | Black Laminate (Field-Tested),★ Bayonet | Freehand (Minimal Wear)";
+//Предметы для raffle
 var raffleDoplers = "";
+//Предметы для TSF
+var tradeskinsfastITEMS="P2000 | Turf (Battle-Scarred)";
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -76,10 +79,13 @@ var steamWindow;
 		}
 	}
 
+	if(location.href.indexOf("tradeskinsfast")>=0){
+		tradeskinsfast();
+	}
+
 //Выполняеться после загрузки страницы
 function injected_main() {
 	if(location.href == "https://cs.money/ru") {
-
 		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
 		if(nick.indexOf("cs.money")<0){
 			alert("Отсутствует ник");
@@ -114,6 +120,9 @@ function al(){
 			}
 		}
 	}
+	/*var name = items[items.length-2].getAttribute('hash');
+	var cost = items[items.length-2].getAttribute('cost');
+	console.log("Проверены все предметы последний предмет: name = "+name+"| |Стоит = "+cost);*/
 	if(ref)refresh();
 	}
 }
@@ -222,6 +231,7 @@ function checkOnTrySkins(){
 var timerRaffle;
 var refreshInventory;
 var checkTradeConfirmInterval;
+
 function raffl() {
 	timerRaffle = setInterval(rafflePick,1000);
 	refreshInventory = setInterval(function(){
@@ -242,6 +252,8 @@ function rafflePick() {
 		var k = true;
 		for(var i = 0; i<botsInventory.length;i++){
 			var src = botsInventory[i].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src").split("image/")[1].split("/")[0];
+			var itemName = botsInventory[i].childNodes[3].innerText.split("$")[0].split("\n\n")[1].replace("\n");
+			console.log(itemName)
 			if(raffleDoplers.indexOf(src)>-1){
 				k= false;
 				clearInterval(timerRaffle);
@@ -272,4 +284,102 @@ function checkTradeConfirm(){
 	}
 }
 
-	
+var tradeskinsfastInterval ; 
+var setInt;
+var price;
+var loadAllItemsBots;
+
+function tradeskinsfast(){
+	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
+	setInt = setInterval(loadAllSkins,300);
+}
+
+var startPosition = 0;
+var lengthSkins = 50;
+var reloadSite = true;
+function loadAllSkins(){
+	loadAllItemsBots = document.getElementById("botinventory");
+	if(loadAllItemsBots.childNodes.length){
+		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
+		price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
+		lengthSkins = loadAllItemsBots.childNodes.length;
+		tradeskinsfastCheck();
+		startPosition = loadAllItemsBots.childNodes.length;
+		//console.log(price)
+		if(price < 1){
+			clearInterval(setInt);
+			console.log(loadAllItemsBots.childNodes.length);
+			if(reloadSite){
+				location.reload();
+			}
+		}
+	}
+	//console.log(loadAllItemsBots.childNodes.length);
+}
+
+function tradeskinsfastCheck(){
+	//clearInterval(tradeskinsfastInterval);
+		//loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
+price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
+	console.time('test');
+	var items = loadAllItemsBots.getElementsByClassName("item");
+	var itemsCheckTSF = tradeskinsfastITEMS.split(",");
+	for(var i = startPosition; i<lengthSkins;i++){
+		for(var j = 0; j<itemsCheckTSF.length;j++){
+			var price = items[i].getElementsByClassName("price")[0].innerHTML;
+			var name = items[i].getElementsByClassName("pic")[0].childNodes[0].getAttribute("alt")
+			if(itemsCheckTSF[j]==name){
+				clearInterval(setInt);
+				pickItemTSF(items[i]);
+				reloadSite = false;
+				return;
+			}
+		}
+	//console.log(name);
+	}
+	console.log("Инвентарь проверен");
+	console.timeEnd('test');
+}	
+var timerConfitmTSF;
+var confirmINT;
+
+function pickItemTSF(item){
+	confirmINT = setInterval(checkConfirm,100);
+	item.click();
+	console.log("click");
+	var tradeButton = document.getElementById("tradebtn");
+	tradeButton.click();
+	setTimeout(function(){
+		timerConfitmTSF = setInterval(checkConfirmTradeTSF,1000);
+	},1500);
+}
+
+function checkConfirmTradeTSF(){
+	try{
+		var span = document.getElementById("offerlist").childNodes[0].getElementsByTagName("span")[0].getAttribute("class");
+		var closeBTN = document.getElementById("trade").getElementsByClassName("close")[0];
+		if(span == "offerstatus greentxt"){
+			clearInterval(timerConfitmTSF);
+		}
+	console.log(span);
+	}catch(err){}
+}
+
+function checkConfirm(){
+	// выбираем нужный элемент
+	try{
+		var k = document.getElementsByClassName("notifyjs-corner");
+		if(k.length>0){
+			console.log("Остановленно  и успешно принято!!!");
+			var messages = k[0].getElementsByClassName("notifyjs-wrapper notifyjs-hidable")[0].getElementsByClassName("notifyjs-container")[0].childNodes[0].childNodes[1].innerHTML;
+			console.log(messages);
+			if(messages == "Trade completed"){
+				location.reload();
+			}
+			if(messages == "Не удалось отправить предложение. Ваш инвентарь будет обновлен") location.reload();
+			clearInterval(confirmINT);
+		}
+	}catch(err){
+		console.log(err);
+	}
+}
