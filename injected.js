@@ -327,8 +327,10 @@ price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getEle
 	for(var i = startPosition; i<lengthSkins;i++){
 		for(var j = 0; j<itemsCheckTSF.length;j++){
 			var price = items[i].getElementsByClassName("price")[0].innerHTML;
-			var name = items[i].getElementsByClassName("pic")[0].childNodes[0].getAttribute("alt")
-			if(itemsCheckTSF[j]==name){
+			var name = items[i].getElementsByClassName("pic")[0].childNodes[0].getAttribute("alt");
+			var priceItem = document.getElementById("userbalance").innerHTML*1;
+			//alert(priceItem);
+			if(itemsCheckTSF[j]==name && price<priceItem){
 				clearInterval(setInt);
 				pickItemTSF(items[i]);
 				reloadSite = false;
