@@ -4,7 +4,9 @@ var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife
 //Предметы для raffle
 var raffleDoplers = "";
 //Предметы для TSF
-var tradeskinsfastITEMS="Sawed-Off | Zander (Minimal Wear)";
+var tradeskinsfastITEMS="Desert Eagle | Urban DDPAT (Battle-Scarred)";
+var filterMin = 0;
+var filtefMax = 1;
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -160,14 +162,14 @@ function checkAut(idItem){
 	var nameWindow = "CheckItem+"+nameItem+"+"+costItem+"+"+costOwerPay+"+"+overPayFloat;
 	setTimeout(function(){window.open("http://tryskins.ru/site/skin-search",nameWindow)},1) ;
 
-	setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
+	//setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
 
 	var responseStr = isThisItem+' , стоит: '+costItem+'$ Переплата: '+costOwerPay.toFixed(3)+'$'+' Кол-во: '+ count;
 
 	var responseDiv = document.getElementById('trade-popup');
 	responseDiv.getElementsByClassName('modal__title')[0].innerHTML = responseStr;
 	responseDiv.getElementsByClassName('modal__subtitle')[0].innerHTML = nameItem;
-	setTimeout(function(){steamWindow.close();},25000);
+	//setTimeout(function(){steamWindow.close();},25000);
 }
 
 //Выполняеться если скин найден
@@ -262,7 +264,7 @@ function rafflePick() {
 				console.log(src);
 				//document.getElementsByClassName("auto-select-button")[0].click();
 				document.getElementsByClassName("trade-button")[0].click();
-				setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
+				//setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
 				checkTradeConfirmInterval = setInterval(checkTradeConfirm,1000);
 			}
 		}
@@ -292,15 +294,17 @@ var loadAllItemsBots;
 function tradeskinsfast(){
 	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
 	setInt = setInterval(loadAllSkins,300);
+
 }
 
 var startPosition = 0;
 var lengthSkins = 50;
 var reloadSite = true;
+var isFirst = true;
 function loadAllSkins(){
 	loadAllItemsBots = document.getElementById("botinventory");
-	if(loadAllItemsBots.childNodes.length){
-
+	if(loadAllItemsBots.childNodes.length>1){
+		if(isFirst) {botitems.FilterByPrice(filterMin,filtefMax); isFirst = false;}
 		var price = document.getElementById("userbalance").innerHTML*1;
 
 		if(price<1) {
@@ -314,12 +318,12 @@ function loadAllSkins(){
 		tradeskinsfastCheck();
 		startPosition = loadAllItemsBots.childNodes.length;
 		//console.log(price)
-		if(price < 1){
+		var ok = price - filterMin;
+		if(ok < 1){
+			//alert(price+"   "+ok);
 			clearInterval(setInt);
 			console.log(loadAllItemsBots.childNodes.length);
-			if(reloadSite){
-				location.reload();
-			}
+			//reloadInventari()
 		}
 	}
 	//console.log(loadAllItemsBots.childNodes.length);
@@ -346,7 +350,6 @@ function tradeskinsfastCheck(){
 				return;
 			}
 		}
-	//console.log(name);
 	}
 	console.log("Инвентарь проверен");
 	console.timeEnd('test');
@@ -384,13 +387,24 @@ function checkConfirm(){
 			console.log("Остановленно  и успешно принято!!!");
 			var messages = k[0].getElementsByClassName("notifyjs-wrapper notifyjs-hidable")[0].getElementsByClassName("notifyjs-container")[0].childNodes[0].childNodes[1].innerHTML;
 			console.log(messages);
-			if(messages == "Trade completed"){
-				location.reload();
-			}
+			/*if(messages == "Trade completed"){
+				reloadInventari();
+			}else 
+			if(messages == "You declined the offer"){
+				reloadInventari();
+			}else 
 			if(messages == "Не удалось отправить предложение. Ваш инвентарь будет обновлен") location.reload();
+			else location.reload();*/
+			 location.reload();
 			clearInterval(confirmINT);
 		}
 	}catch(err){
 		console.log(err);
 	}
+}
+
+function reloadInventari(){
+	document.getElementById("botrefresh").click();
+	isFirst = true;
+	setTimeout(tradeskinsfast,500);
 }
