@@ -4,7 +4,7 @@ var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife
 //Предметы для raffle
 var raffleDoplers = "";
 //Предметы для TSF
-var tradeskinsfastITEMS="Desert Eagle | Urban DDPAT (Battle-Scarred)";
+var tradeskinsfastITEMS="Negev | Dazzle (Battle-Scarred)";
 var filterMin = 0;
 var filtefMax = 1;
 
@@ -293,7 +293,7 @@ var loadAllItemsBots;
 
 function tradeskinsfast(){
 	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
-	setInt = setInterval(loadAllSkins,300);
+	setInt = setInterval(loadAllSkins,500);
 
 }
 
@@ -308,8 +308,8 @@ function loadAllSkins(){
 		var price = document.getElementById("userbalance").innerHTML*1;
 
 		if(price<1) {
-			clearInterval(setInt);
-			alert("Баланс закончился! =)");
+			//clearInterval(setInt);
+			//alert("Баланс закончился! =)");
 		};
 
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
@@ -323,7 +323,7 @@ function loadAllSkins(){
 			//alert(price+"   "+ok);
 			clearInterval(setInt);
 			console.log(loadAllItemsBots.childNodes.length);
-			//reloadInventari()
+			reloadInventari()
 		}
 	}
 	//console.log(loadAllItemsBots.childNodes.length);
@@ -387,16 +387,16 @@ function checkConfirm(){
 			console.log("Остановленно  и успешно принято!!!");
 			var messages = k[0].getElementsByClassName("notifyjs-wrapper notifyjs-hidable")[0].getElementsByClassName("notifyjs-container")[0].childNodes[0].childNodes[1].innerHTML;
 			console.log(messages);
-			/*if(messages == "Trade completed"){
+			clearInterval(confirmINT);
+			if(messages == "Trade completed"){
 				reloadInventari();
 			}else 
 			if(messages == "You declined the offer"){
 				reloadInventari();
 			}else 
 			if(messages == "Не удалось отправить предложение. Ваш инвентарь будет обновлен") location.reload();
-			else location.reload();*/
-			 location.reload();
-			clearInterval(confirmINT);
+			//else location.reload();
+			// location.reload();
 		}
 	}catch(err){
 		console.log(err);
@@ -406,5 +406,5 @@ function checkConfirm(){
 function reloadInventari(){
 	document.getElementById("botrefresh").click();
 	isFirst = true;
-	setTimeout(tradeskinsfast,500);
+	setTimeout(tradeskinsfast,200);
 }
