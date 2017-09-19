@@ -4,9 +4,9 @@ var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife
 //Предметы для raffle
 var raffleDoplers = "";
 //Предметы для TSF
-var tradeskinsfastITEMS="Negev | Dazzle (Battle-Scarred)";
-var filterMin = 0;
-var filtefMax = 1;
+var tradeskinsfastITEMS="Sticker | The Bot";
+var filterMin = 1;
+var filtefMax = 15;
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -294,13 +294,13 @@ var loadAllItemsBots;
 function tradeskinsfast(){
 	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
 	setInt = setInterval(loadAllSkins,500);
-
 }
 
 var startPosition = 0;
 var lengthSkins = 50;
 var reloadSite = true;
 var isFirst = true;
+
 function loadAllSkins(){
 	loadAllItemsBots = document.getElementById("botinventory");
 	if(loadAllItemsBots.childNodes.length>1){
@@ -308,8 +308,8 @@ function loadAllSkins(){
 		var price = document.getElementById("userbalance").innerHTML*1;
 
 		if(price<1) {
-			//clearInterval(setInt);
-			//alert("Баланс закончился! =)");
+			clearInterval(setInt);
+			alert("Баланс закончился! =)");
 		};
 
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
@@ -321,17 +321,15 @@ function loadAllSkins(){
 		var ok = price - filterMin;
 		if(ok < 1){
 			//alert(price+"   "+ok);
+			reloadInventari();
 			clearInterval(setInt);
-			console.log(loadAllItemsBots.childNodes.length);
-			reloadInventari()
+			console.log(loadAllItemsBots.childNodes.length);	
 		}
 	}
 	//console.log(loadAllItemsBots.childNodes.length);
 }
 
 function tradeskinsfastCheck(){
-	//clearInterval(tradeskinsfastInterval);
-		//loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
 	price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
 	console.time('test');
 	var items = loadAllItemsBots.getElementsByClassName("item");
@@ -343,11 +341,11 @@ function tradeskinsfastCheck(){
 			var priceItem = document.getElementById("userbalance").innerHTML*1;
 			//alert(priceItem);
 			if(itemsCheckTSF[j]==name && price<priceItem){
-				console.log("Цена = "+price+" Баланс = "+priceItem);
 				clearInterval(setInt);
+				console.log("Цена = "+price+" Баланс = "+priceItem);
 				pickItemTSF(items[i]);
 				reloadSite = false;
-				return;
+				break;
 			}
 		}
 	}
@@ -360,23 +358,9 @@ var confirmINT;
 function pickItemTSF(item){
 	confirmINT = setInterval(checkConfirm,100);
 	item.click();
-	console.log("click");
-	var tradeButton = document.getElementById("tradebtn");
+	var tradeButton = document.getElementById("tradebtn");	
 	tradeButton.click();
-	setTimeout(function(){
-		timerConfitmTSF = setInterval(checkConfirmTradeTSF,1000);
-	},1500);
-}
-
-function checkConfirmTradeTSF(){
-	try{
-		var span = document.getElementById("offerlist").childNodes[0].getElementsByTagName("span")[0].getAttribute("class");
-		var closeBTN = document.getElementById("trade").getElementsByClassName("close")[0];
-		if(span == "offerstatus greentxt"){
-			clearInterval(timerConfitmTSF);
-		}
-	console.log(span);
-	}catch(err){}
+	console.log("click");
 }
 
 function checkConfirm(){
@@ -389,14 +373,17 @@ function checkConfirm(){
 			console.log(messages);
 			clearInterval(confirmINT);
 			if(messages == "Trade completed"){
-				reloadInventari();
+				setTimeout(reloadInventari,3000);
 			}else 
 			if(messages == "You declined the offer"){
-				reloadInventari();
+				setTimeout(reloadInventari,3000);
 			}else 
 			if(messages == "Не удалось отправить предложение. Ваш инвентарь будет обновлен") location.reload();
+			else{
+				location.reLoad();
+			}
 			//else location.reload();
-			// location.reload();
+			//location.reload();
 		}
 	}catch(err){
 		console.log(err);
@@ -406,5 +393,5 @@ function checkConfirm(){
 function reloadInventari(){
 	document.getElementById("botrefresh").click();
 	isFirst = true;
-	setTimeout(tradeskinsfast,200);
+	tradeskinsfast();
 }
