@@ -1,6 +1,6 @@
 
 //Список для cs.money
-var serhtItem = "★ Falchion Knife | Ultraviolet (Minimal Wear),★ Bowie Knife | Ultraviolet (Minimal Wear),M4A4 | Poseidon (Field-Tested),M4A4 | Poseidon (Minimal Wear),M4A4 | Poseidon (Minimal Wear),StatTrak™ AK-47 | Neon Revolution (Factory New),★ Flip Knife | Crimson Web (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),★ Gut Knife | Lore (Minimal Wear),★ Bowie Knife | Marble Fade (Factory New),StatTrak™ AK-47 | Case Hardened (Factory New),★ Bowie Knife | Night (Minimal Wear),★ Bayonet | Lore (Minimal Wear),★ M9 Bayonet | Crimson Web (Minimal Wear),AK-47 | Fire Serpent (Battle-Scarred),★ Flip Knife | Lore (Factory New),AK-47 | Fire Serpent (Well-Worn),★ Flip Knife | Slaughter (Field-Tested),★ StatTrak™ M9 Bayonet | Ultraviolet (Field-Tested),★ Bayonet | Autotronic (Battle-Scarred),★ Huntsman Knife | Tiger Tooth (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),★ M9 Bayonet | Black Laminate (Field-Tested),★ Bayonet | Freehand (Minimal Wear)";
+var serhtItem = "★ Flip Knife | Forest DDPAT (Well-Worn),Valeria Phoenix Pin,★ Shadow Daggers | Ultraviolet (Minimal Wear),★ Bayonet | Damascus Steel (Battle-Scarred),★ StatTrak™ Huntsman Knife | Safari Mesh (Field-Tested),AUG | Akihabara Accept (Minimal Wear),M4A4 | Poseidon (Field-Tested),AK-47 | Fire Serpent (Well-Worn),★ StatTrak™ Falchion Knife | Night (Field-Tested),★ Falchion Knife | Marble Fade (Factory New),★ Gut Knife | Autotronic (Minimal Wear),StatTrak™ AWP | Corticera (Factory New),StatTrak™ AWP | Oni Taiji (Field-Tested),StatTrak™ Desert Eagle | Golden Koi (Factory New),M4A4 | Poseidon (Minimal Wear),★ Bowie Knife | Night (Battle-Scarred),StatTrak™ SSG 08 | Dragonfire (Factory New),AK-47 | Jet Set (Minimal Wear),★ Butterfly Knife | Damascus Steel (Factory New),★ Falchion Knife | Crimson Web (Minimal Wear),★ Bowie Knife | Tiger Tooth (Factory New),AUG | Hot Rod (Factory New),★ Falchion Knife | Tiger Tooth (Factory New),★ Gut Knife | Lore (Factory New),★ StatTrak™ Falchion Knife | Damascus Steel (Field-Tested),★ Gut Knife | Bright Water (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),★ Huntsman Knife | Ultraviolet (Field-Tested),★ StatTrak™ Karambit | Safari Mesh (Field-Tested),★ Gut Knife | Safari Mesh (Well-Worn),★ Flip Knife | Bright Water (Field-Tested),★ Bayonet | Safari Mesh (Well-Worn),★ Huntsman Knife | Safari Mesh (Well-Worn),StatTrak™ AK-47 | Wasteland Rebel (Field-Tested),★ Flip Knife | Urban Masked (Minimal Wear),AK-47 | Fuel Injector (Factory New),StatTrak™ M4A1-S | Mecha Industries (Minimal Wear),★ Flip Knife | Forest DDPAT (Battle-Scarred),★ Gut Knife | Boreal Forest (Well-Worn),★ Flip Knife | Damascus Steel (Minimal Wear),StatTrak™ UMP-45 | Primal Saber (Factory New),★ Bayonet | Black Laminate (Minimal Wear),★ Falchion Knife | Safari Mesh (Battle-Scarred),★ M9 Bayonet | Black Laminate (Field-Tested),★ Falchion Knife | Scorched (Battle-Scarred),StatTrak™ AWP | Hyper Beast (Well-Worn),★ Shadow Daggers | Safari Mesh (Well-Worn),★ Falchion Knife | Damascus Steel (Field-Tested),★ Shadow Daggers | Boreal Forest (Battle-Scarred),StatTrak™ USP-S | Neo-Noir (Minimal Wear),★ Bayonet | Black Laminate (Well-Worn),★ Falchion Knife | Urban Masked (Minimal Wear),AK-47 | Hydroponic (Factory New),StatTrak™ M4A4 | Hellfire (Minimal Wear),★ Huntsman Knife | Rust Coat (Battle-Scarred),★ Shadow Daggers | Safari Mesh (Battle-Scarred),StatTrak™ AK-47 | Fuel Injector (Minimal Wear),★ Shadow Daggers | Forest DDPAT (Battle-Scarred),★ Gut Knife | Scorched (Minimal Wear),★ Flip Knife | Black Laminate (Minimal Wear),★ Flip Knife | Slaughter (Field-Tested)";
 //Предметы для raffle
 var raffleDoplers = "";
 //Предметы для TSF
@@ -82,22 +82,35 @@ var steamWindow;
 	}
 
 	if(location.href.indexOf("tradeskinsfast")>=0){
-		tradeskinsfast();
+		//tradeskinsfast();
 	}
 
-//Выполняеться после загрузки страницы
-function injected_main() {
-	if(location.href == "https://cs.money/ru") {
+		if(location.href == "https://cs.money/ru") {
 		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
+		var header = document.getElementsByClassName("header__panel")[0];
+		header.innerHTML += "<div class='onoffswitch'><input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked onchange='work(this.checked)'><label class='onoffswitch-label' for='myonoffswitch'><span class='onoffswitch-inner'></span><span class='onoffswitch-switch'></span></label></div>";
 		if(nick.indexOf("cs.money")<0){
 			alert("Отсутствует ник");
 		}
 		idInterval1 = setInterval(al, 500);
 		//idInterval2 = setInterval(refresh, 4500);
 	}
+
+//Выполняеться после загрузки страницы
+/*function injected_main() {
+
+}*/
+var ref = true;
+function work(check) {
+	if(check){
+		idInterval1 = setInterval(al, 500);
+		ref = true
+	}else{
+		clearInterval(idInterval1);
+		ref = false;
+	}
 }
 
-var ref = true;
 var serchItems = serhtItem.split(',');
 //Поиск необходимого скина
 function al(){
@@ -112,7 +125,15 @@ function al(){
 	for (var i = 0; i < items.length; i++) {
 		for (var j = 0; j < serchItems.length; j++) {
 			//Если тем совподает с одним из необходимых
-			if(items[i].getAttribute('hash')==serchItems[j]){
+				var overPayFloat;
+				if(items[i].getAttribute("ar") != undefined){
+					console.log("Не наебешь");
+					overPayFloat = 1;
+				}else{
+					overPayFloat = 0
+				}
+
+			if(items[i].getAttribute('hash')==serchItems[j] && overPayFloat!=1){
 				var id = items[i].getAttribute('id');
 				var cost = items[i].getAttribute('cost');
 				clearInterval(idInterval1);
@@ -177,7 +198,7 @@ function pickItem(idItem){
 
 		document.getElementById(idItem).click();
 		document.getElementById("price-input-min").value = 0;
-		document.getElementById('auto_select').click();
+		//document.getElementById('auto_select').click();
 		document.getElementById('trade-btn').click();
 		checkAut(idItem);
 		//setTimeout(refresh,10000);
@@ -293,7 +314,7 @@ var loadAllItemsBots;
 
 function tradeskinsfast(){
 	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
-	setInt = setInterval(loadAllSkins,500);
+	setInt = setInterval(loadAllSkins,1000);
 }
 
 var startPosition = 0;
@@ -308,8 +329,8 @@ function loadAllSkins(){
 		var price = document.getElementById("userbalance").innerHTML*1;
 
 		if(price<1) {
-			clearInterval(setInt);
-			alert("Баланс закончился! =)");
+			//clearInterval(setInt);
+			//alert("Баланс закончился! =)");
 		};
 
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
@@ -321,7 +342,7 @@ function loadAllSkins(){
 		var ok = price - filterMin;
 		if(ok < 1){
 			//alert(price+"   "+ok);
-			reloadInventari();
+			setTimeout(function(){reloadInventari();},300);
 			clearInterval(setInt);
 			console.log(loadAllItemsBots.childNodes.length);	
 		}
