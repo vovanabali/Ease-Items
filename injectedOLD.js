@@ -1,12 +1,12 @@
 
 //Список для cs.money
-var serhtItem = "★ M9 Bayonet | Crimson Web (Minimal Wear),★ Butterfly Knife | Marble Fade (Factory New),★ Flip Knife | Lore (Minimal Wear),★ Huntsman Knife | Tiger Tooth (Factory New),★ Bowie Knife | Tiger Tooth (Factory New),★ Bayonet | Autotronic (Field-Tested),StatTrak™ AWP | Oni Taiji (Factory New),M4A4 | Poseidon (Minimal Wear),★ Falchion Knife | Tiger Tooth (Factory New),★ Bowie Knife | Marble Fade (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),4★ M9 Bayonet | Black Laminate (Battle-Scarred),★ Karambit | Damascus Steel (Factory New),★ Karambit | Lore (Field-Tested),★ StatTrak™ Butterfly Knife | Fade (Factory New),★ M9 Bayonet | Autotronic (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Bayonet | Slaughter (Field-Tested)";
+var serhtItem = "★ Bayonet | Damascus Steel (Battle-Scarred),★ Falchion Knife | Ultraviolet (Minimal Wear),Sticker | Crown (Foil),M4A4 | Poseidon (Field-Tested),★ Huntsman Knife | Crimson Web (Well-Worn),Sticker | Flammable (Foil),★ Falchion Knife | Marble Fade (Factory New),★ Gut Knife | Forest DDPAT (Minimal Wear),StatTrak™ AWP | Oni Taiji (Field-Tested),M4A4 | Poseidon (Minimal Wear),StatTrak™ AK-47 | Neon Revolution (Factory New),StatTrak™ AK-47 | Wasteland Rebel (Field-Tested),★ Gut Knife | Safari Mesh (Battle-Scarred),AK-47 | Jet Set (Minimal Wear),★ Gut Knife | Lore (Minimal Wear),AUG | Akihabara Accept (Field-Tested),★ Bowie Knife | Tiger Tooth (Factory New),★ Bowie Knife | Night (Battle-Scarred),★ Gut Knife | Urban Masked (Well-Worn),★ Falchion Knife | Crimson Web (Minimal Wear),★ Butterfly Knife | Damascus Steel (Factory New),★ Huntsman Knife | Ultraviolet (Field-Tested),★ Gut Knife | Bright Water (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),★ Gut Knife | Scorched (Minimal Wear),★ Gut Knife | Safari Mesh (Well-Worn),★ StatTrak™ Karambit | Boreal Forest (Field-Tested),AK-47 | Hydroponic (Minimal Wear),★ Bayonet | Autotronic (Battle-Scarred),★ Huntsman Knife | Safari Mesh (Well-Worn),★ Flip Knife | Forest DDPAT (Battle-Scarred),★ Falchion Knife | Scorched (Battle-Scarred),★ M9 Bayonet | Stained (Battle-Scarred),★ Falchion Knife | Damascus Steel (Minimal Wear),★ Bayonet | Black Laminate (Well-Worn),★ Shadow Daggers | Boreal Forest (Battle-Scarred),★ Shadow Daggers | Marble Fade (Factory New),★ Huntsman Knife | Safari Mesh (Minimal Wear),StatTrak™ M4A1-S | Mecha Industries (Minimal Wear),StatTrak™ AK-47 | Neon Revolution (Battle-Scarred),★ Falchion Knife | Safari Mesh (Battle-Scarred),★ Huntsman Knife | Rust Coat (Battle-Scarred),★ StatTrak™ Karambit | Safari Mesh (Field-Tested),★ Gut Knife | Urban Masked (Minimal Wear),★ Falchion Knife | Urban Masked (Minimal Wear),StatTrak™ USP-S | Neo-Noir (Minimal Wear),StatTrak™ M4A4 | Buzz Kill (Minimal Wear),StatTrak™ M4A4 | Hellfire (Minimal Wear),★ Butterfly Knife | Damascus Steel (Field-Tested),★ Shadow Daggers | Scorched (Battle-Scarred),★ Gut Knife | Boreal Forest (Well-Worn),★ Flip Knife | Bright Water (Field-Tested),M4A1-S | Hot Rod (Minimal Wear),★ Falchion Knife | Tiger Tooth (Factory New),AK-47 | Hydroponic (Factory New),★ Butterfly Knife | Scorched (Well-Worn),★ Flip Knife | Slaughter (Field-Tested),★ Shadow Daggers | Safari Mesh (Well-Worn),★ Gut Knife | Forest DDPAT (Battle-Scarred),★ Bowie Knife | Damascus Steel (Field-Tested),StatTrak™ P250 | Mehndi (Factory New),★ Shadow Daggers | Forest DDPAT (Battle-Scarred),★ Falchion Knife | Damascus Steel (Field-Tested),Valeria Phoenix Pin,Sticker | Crown (Foil),★ Bowie Knife | Safari Mesh (Well-Worn),★ Bowie Knife | Night (Minimal Wear),★ Huntsman Knife | Crimson Web (Well-Worn),StatTrak™ AK-47 | Neon Revolution (Factory New),★ Falchion Knife | Ultraviolet (Minimal Wear),★ Flip Knife | Crimson Web (Minimal Wear),AUG | Akihabara Accept (Field-Tested),StatTrak™ AWP | Oni Taiji (Field-Tested),★ Gut Knife | Safari Mesh (Battle-Scarred),★ Flip Knife | Forest DDPAT (Battle-Scarred),M4A4 | Poseidon (Minimal Wear),★ Gut Knife | Forest DDPAT (Minimal Wear),★ Shadow Daggers | Stained (Battle-Scarred),★ Flip Knife | Freehand (Factory New),M4A4 | Poseidon (Field-Tested),M4A4 | Poseidon (Factory New),★ Falchion Knife | Marble Fade (Factory New),StatTrak™ AK-47 | Wasteland Rebel (Field-Tested),★ M9 Bayonet | Crimson Web (Battle-Scarred)";
 //Предметы для raffle
-var serchSkis = "★ M9 Bayonet | Lore (Factory new)";
+var raffleDoplers = "";
 //Предметы для TSF
-var tradeskinsfastITEMS="StatTrak™ AWP | Fever Dream (Factory New),StatTrak™ FAMAS | Djinn (Factory New),StatTrak™ Desert Eagle | Kumicho Dragon (Field-Tested),M4A4 | Buzz Kill (Well-Worn),StatTrak™ AK-47 | Orbit Mk01 (Factory New),StatTrak™ P90 | Shallow Grave (Factory New),UMP-45 | Blaze (Factory New),StatTrak™ MP7 | Nemesis (Factory New),StatTrak™ AWP | Fever Dream (Minimal Wear),StatTrak™ AK-47 | Redline (Field-Tested),USP-S | Orion (Factory New),StatTrak™ AWP | Redline (Field-Tested),AK-47 | Frontside Misty (Minimal Wear),StatTrak™ P2000 | Fire Elemental (Field-Tested),AWP | BOOM (Minimal Wear),StatTrak™ P250 | Mehndi (Minimal Wear),AWP | Redline (Minimal Wear),StatTrak™ USP-S | Cyrex (Factory New),M4A1-S | Hot Rod (Factory New),StatTrak™ M4A4 | Desert-Strike (Minimal Wear),AWP | Asiimov (Battle-Scarred),M4A1-S | Golden Coil (Factory New),USP-S | Kill Confirmed (Well-Worn),StatTrak™ SG 553 | Cyrex (Minimal Wear),AK-47 | Redline (Minimal Wear),StatTrak™ M4A1-S | Decimator (Minimal Wear),StatTrak™ Desert Eagle | Conspiracy (Factory New),★ Flip Knife | Urban Masked (Well-Worn),SSG 08 | Dragonfire (Field-Tested),M4A4 | Hellfire (Minimal Wear),AWP | Graphite (Factory New),AWP | Hyper Beast (Field-Tested),AK-47 | Point Disarray (Field-Tested),USP-S | Kill Confirmed (Field-Tested),StatTrak™ Glock-18 | Water Elemental (Minimal Wear),StatTrak™ AK-47 | Blue Laminate (Minimal Wear),StatTrak™ USP-S | Cyrex (Minimal Wear),P250 | Asiimov (Minimal Wear),CZ75-Auto | Victoria (Factory New),StatTrak™ M4A4 | Desolate Space (Field-Tested),StatTrak™ P2000 | Imperial Dragon (Factory New),StatTrak™ P250 | Muertos (Factory New),StatTrak™ M4A1-S | Golden Coil (Field-Tested),AK-47 | Aquamarine Revenge (Field-Tested),AK-47 | Vulcan (Minimal Wear),AK-47 | Hydroponic (Field-Tested),M4A1-S | Cyrex (Factory New),AK-47 | Vulcan (Well-Worn),★ Falchion Knife | Rust Coat (Battle-Scarred),AWP | Hyper Beast (Battle-Scarred),AK-47 | Wasteland Rebel (Field-Tested),AK-47 | Fuel Injector (Battle-Scarred),StatTrak™ USP-S | Blueprint (Factory New),SSG 08 | Dragonfire (Factory New),AK-47 | Vulcan (Battle-Scarred),USP-S | Kill Confirmed (Minimal Wear),M4A4 | Asiimov (Battle-Scarred),AK-47 | Jaguar (Well-Worn),★ Falchion Knife | Boreal Forest (Battle-Scarred),StatTrak™ AK-47 | Orbit Mk01 (Field-Tested),AK-47 | Fuel Injector (Field-Tested),M4A1-S | Hyper Beast (Minimal Wear),SSG 08 | Blood in the Water (Minimal Wear),★ Flip Knife,StatTrak™ USP-S | Caiman (Factory New),StatTrak™ Glock-18 | Water Elemental (Factory New),AK-47 | Fuel Injector (Well-Worn),AK-47 | Bloodsport (Factory New)";
-var filterMin = 0;
-var filtefMax = 2000;
+var tradeskinsfastITEMS="Sticker | The Bot";
+var filterMin = 1;
+var filtefMax = 15;
 
 var idInterval1 = 0;
 var idInterval2 =0;
@@ -24,7 +24,7 @@ var steamWindow;
 
 	if(location.href.indexOf("raffletrades")>-1){
 		console.log("Is Work");
-		//raffl();
+		raffl();
 	}
 
 	if(location.href.indexOf("http://steamcommunity.com")>-1 ){
@@ -69,6 +69,7 @@ var steamWindow;
 	if(location.href.indexOf("tradeoffer")>-1 ){
 		if(window.name.indexOf('SteamTrade')>-1){
 			ToggleReady( true );
+
 			try{
 				document.getElementsByClassName('btn_green_white_innerfade btn_medium')[0].click();
 			}catch(err){}
@@ -83,18 +84,19 @@ var steamWindow;
 	if(location.href.indexOf("tradeskinsfast")>=0){
 		//var header = document.getElementById("mainmenu");
 		//header.innerHTML += "<li><div class='onoffswitch'><input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked onchange='work(this.checked)'><label class='onoffswitch-label' for='myonoffswitch'><span class='onoffswitch-inner'></span><span class='onoffswitch-switch'></span></label></div></li>";
+	
 
-		tradeskinsfast();
+		//tradeskinsfast();
 	}
 
-	if(location.href == "https://cs.money/ru") {
+		if(location.href == "https://cs.money/ru") {
 		var nick = document.getElementsByClassName("profile__name")[0].innerHTML;
 		var header = document.getElementsByClassName("header__panel")[0];
 		header.innerHTML += "<div class='onoffswitch'><input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked onchange='work(this.checked)'><label class='onoffswitch-label' for='myonoffswitch'><span class='onoffswitch-inner'></span><span class='onoffswitch-switch'></span></label></div>";
 		if(nick.indexOf("cs.money")<0){
 			alert("Отсутствует ник");
 		}
-		idInterval1 = setInterval(al, 2000);
+		idInterval1 = setInterval(al, 500);
 		//idInterval2 = setInterval(refresh, 4500);
 	}
 
@@ -104,7 +106,6 @@ var steamWindow;
 }*/
 var ref = true;
 var setInt;
-var countClickNew = 0;
 function work(check) {
 	if(check){
 		idInterval1 = setInterval(al, 500);
@@ -118,9 +119,9 @@ function work(check) {
 var serchItems = serhtItem.split(',');
 //Поиск необходимого скина
 function al(){
+
 	//Если инвентарь прогрузился 
 	if(document.getElementById('inventory_user').childNodes.length > 0){
-		if(countClickNew == 0) { document.getElementById("bot-sort-list").getElementsByTagName("li")[4].getElementsByTagName("a")[0].click(); countClickNew++; console.log("Новые айтемы");}
 	//Поиск всех итемов
 	var items = document.getElementById('inventory_bot').childNodes;
 
@@ -149,7 +150,7 @@ function al(){
 	/*var name = items[items.length-2].getAttribute('hash');
 	var cost = items[items.length-2].getAttribute('cost');
 	console.log("Проверены все предметы последний предмет: name = "+name+"| |Стоит = "+cost);*/
-	//if(ref)refresh();
+	if(ref)refresh();
 	}
 }
 //Проверка автоподбора
@@ -254,15 +255,66 @@ function checkOnTrySkins(){
 	document.getElementsByTagName('button')[0].click();
 	//alert('Название: '+ itemName +' Стоит: '+countItem);
 }
-
+var timerRaffle;
 var refreshInventory;
 var checkTradeConfirmInterval;
+
+function raffl() {
+	timerRaffle = setInterval(rafflePick,1000);
+	refreshInventory = setInterval(function(){
+		document.getElementsByClassName("refresh")[1].click();
+	},5000);
+}
+
+
+function rafflePick() {
+	var myInventory = document.getElementsByClassName("inventoryContent")[0].getElementsByClassName("inventoryItemContainer");
+	var botsInventory = document.getElementsByClassName("inventoryContent")[1].getElementsByClassName("inventoryItemContainer");
+
+	if(botsInventory.length>10){
+		/*var loadAllItemsBots = document.getElementsByClassName("box-content maximize")[1];
+		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;*/// -- Скролит Div до конца
+
+		console.log(botsInventory.length);
+		var k = true;
+		for(var i = 0; i<botsInventory.length;i++){
+			var src = botsInventory[i].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src").split("image/")[1].split("/")[0];
+			var itemName = botsInventory[i].childNodes[3].innerText.split("$")[0].split("\n\n")[1].replace("\n");
+			console.log(itemName)
+			if(raffleDoplers.indexOf(src)>-1){
+				k= false;
+				clearInterval(timerRaffle);
+				clearInterval(refreshInventory);
+				botsInventory[i].click();
+				console.log(src);
+				//document.getElementsByClassName("auto-select-button")[0].click();
+				document.getElementsByClassName("trade-button")[0].click();
+				//setTimeout(function(){ steamWindow = window.open("http://steamcommunity.com/profiles/76561198086632933/tradeoffers/",'SteamTradeOffers',"location,width=10,height=10,top=0");},1);
+				checkTradeConfirmInterval = setInterval(checkTradeConfirm,1000);
+			}
+		}
+		//document.getElementsByClassName("inventoryContent")[1].getElementsByClassName("inventoryItemContainer")[0].getElementsByClassName("inventoryItem")[0].getElementsByClassName("inventoryItemContent")[0].childNodes[1].getAttribute("src")
+	}
+}
+
+function checkTradeConfirm(){
+	var modalWindow = document.getElementsByTagName("ngb-modal-window")[0];
+	var textInModalWindow = modalWindow.getElementsByClassName("panel-body")[0].getElementsByClassName("text-center")[0].childNodes[1].innerHTML;
+	if(textInModalWindow == "YOU HAVE NO PENDING TRADES."){
+		location.reload();
+		/*document.getElementsByClassName("btn btn-default")[0].click();
+		document.getElementsByClassName("refresh")[1].click();
+		setTimeout(function(){
+			clearInterval(checkTradeConfirmInterval);
+			raffl();
+		},2000);*/
+	}
+}
 
 var tradeskinsfastInterval ; 
 
 var price;
 var loadAllItemsBots;
-var reloadInterval;
 
 function tradeskinsfast(){
 	//tradeskinsfastInterval = setInterval(tradeskinsfastCheck,100);
@@ -277,24 +329,25 @@ var isFirst = true;
 function loadAllSkins(){
 	loadAllItemsBots = document.getElementById("botinventory");
 	if(loadAllItemsBots.childNodes.length>1){
-		setTimeout(function(){reloadInventari();},13000);
 		if(isFirst) {botitems.FilterByPrice(filterMin,filtefMax); isFirst = false;}
 		var price = document.getElementById("userbalance").innerHTML*1;
 
+		if(price<1) {
+			//clearInterval(setInt);
+			//alert("Баланс закончился! =)");
+		};
+
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
 		price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
-		//lengthSkins = loadAllItemsBots.childNodes.length;
-		//tradeskinsfastCheck();
-		//startPosition = loadAllItemsBots.childNodes.length;
+		lengthSkins = loadAllItemsBots.childNodes.length;
+		tradeskinsfastCheck();
+		startPosition = loadAllItemsBots.childNodes.length;
 		//console.log(price)
 		var ok = price - filterMin;
-		if(ok < 15){
-			clearInterval(setInt);
-			lengthSkins = 0;
-			tradeskinsfastCheck();
-			startPosition = loadAllItemsBots.childNodes.length;
+		if(ok < 1){
 			//alert(price+"   "+ok);
-			//setTimeout(function(){reloadInventari();},2000);
+			setTimeout(function(){reloadInventari();},300);
+			clearInterval(setInt);
 			console.log(loadAllItemsBots.childNodes.length);	
 		}
 	}
@@ -320,10 +373,6 @@ function tradeskinsfastCheck(){
 				break;
 			}
 		}
-	}
-	if (reloadSite) {
-		console.log(" ПЕРЕЗАГРУЗИТЬ  ");
-		setTimeout(reloadInventari(),11000);
 	}
 	console.log("Инвентарь проверен");
 	console.timeEnd('test');
@@ -370,78 +419,4 @@ function reloadInventari(){
 	document.getElementById("botrefresh").click();
 	isFirst = true;
 	tradeskinsfast();
-}
-
-var timer;
-
-function raffle(){
-	serchSkin();
-	console.log("Check");
-	/*timer = setInterval(function (){
-		if(allSkins().length != 0){
-			serchSkin();
-			console.log("Check");
-		}
-	}, 500);*/
-}
-
-//Load all skins
-function allSkins() {
-	return document.getElementsByClassName("box siteInventory")[0].getElementsByClassName("inventoryItem");
-}
-
-var isReload = true;;
-function serchSkin(){
-	var itemsBots = allSkins();
-	var serchSkinsMas = serchSkis.split(",");
-	for(var i =0; i<itemsBots.length;i++){
-		var marcetNameStr = marcetName(itemsBots[i]);
-		for(var j =0; j< serchSkinsMas.length; j++){
-			if(marcetNameStr == serchSkinsMas[j]) {
-				itemsBots[i].click();
-				document.getElementsByClassName("trade-button")[0].click();
-				isReload = false;
-				clearInterval(timer);
-				break;
-			}
-		}
-		if(!isReload) {
-			break; 
-		}
-	}
-	if (isReload) {
-		document.getElementsByClassName("box siteInventory")[0].getElementsByClassName("refresh")[0].click();
-		setTimeout(function(){
-			serchSkin();
-		}, 1500);
-	}
-}
-
-function marcetName(item){
-	var tempMarcetName = "";
-	var allNames = item.getElementsByClassName("inventoryItemFooter")[0].getElementsByTagName("span");
-	for(var i = 0; i<allNames.length;i++) {
-		if (i!= allNames.length-1)
-			tempMarcetName+=allNames[i].innerText+" | ";	
-		else
-			tempMarcetName+=allNames[i].innerText;
-	}
-	var cuality;
-	if(item.getElementsByClassName("inventoryItemHeader")[0].getElementsByTagName("span").length !== 0) {
-		cuality =item.getElementsByClassName("inventoryItemHeader")[0].getElementsByTagName("span")[0].innerText;
-	}
-	tempMarcetName+=" "+ getCurrectCuality(cuality);
-	return tempMarcetName;
-}
-
-function getCurrectCuality(ex){
-var currentName = "";
-switch(ex) {
-    	case "FN": currentName = "(Factory new)"; break;
-		case "MW": currentName = "(Minimal Wear)"; break;
-    	case "FT": currentName = "(Field-Tested)"; break;
-    	case "WW": currentName = "(Well-Worn)"; break;
-		case "BS": currentName = "(Battle-Scarred)"; break;		          
-	}
-return currentName;
 }
