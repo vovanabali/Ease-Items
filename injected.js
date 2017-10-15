@@ -1,6 +1,7 @@
 
 //Список для cs.money
 <<<<<<< HEAD
+<<<<<<< HEAD
 var serhtItem = "P250 | See Ya Later (Factory New),StatTrak™ AK-47 | The Empress (Field-Tested),AK-47 | The Empress (Battle-Scarred),StatTrak™ M4A1-S | Leaded Glass (Factory New),AK-47 | The Empress (Field-Tested),StatTrak™ SSG 08 | Blood in the Water (Factory New),★ Bowie Knife | Night (Battle-Scarred),AK-47 | Fire Serpent (Well-Worn),AK-47 | The Empress (Well-Worn),AK-47 | The Empress (Minimal Wear),★ Huntsman Knife | Marble Fade (Factory New),StatTrak™ AK-47 | Case Hardened (Minimal Wear),★ Butterfly Knife | Marble Fade (Factory New),★ Karambit | Freehand (Factory New),StatTrak™ AK-47 | Red Laminate (Minimal Wear),StatTrak™ AWP | Oni Taiji (Field-Tested)";
 //Предметы для raffle
 var serchSkis = ""
@@ -8,6 +9,15 @@ var serchSkis = ""
 var tradeskinsfastITEMS="AK-47 | Redline (Field-Tested),Desert Eagle | Blaze (Factory New),StatTrak™ Negev | Power Loader (Factory New),StatTrak™ AWP | Fever Dream (Factory New),StatTrak™ P250 | Cartel (Field-Tested),AK-47 | Frontside Misty (Minimal Wear),StatTrak™ M4A4 | Buzz Kill (Field-Tested),M4A4 | Desolate Space (Field-Tested),AWP | Electric Hive (Factory New),USP-S | Overgrowth (Minimal Wear),USP-S | Kill Confirmed (Battle-Scarred),M4A1-S | Hyper Beast (Field-Tested),P90 | Asiimov (Minimal Wear),StatTrak™ AK-47 | Red Laminate (Field-Tested),AWP | Corticera (Minimal Wear),StatTrak™ USP-S | Stainless (Minimal Wear),★ M9 Bayonet | Tiger Tooth (Factory New),StatTrak™ Glock-18 | Water Elemental (Battle-Scarred),M4A1-S | Mecha Industries (Battle-Scarred),StatTrak™ Galil AR | Stone Cold (Factory New),StatTrak™ SG 553 | Cyrex (Minimal Wear),StatTrak™ AWP | Elite Build (Field-Tested),AK-47 | Frontside Misty (Field-Tested),AWP | Asiimov (Field-Tested),M4A1-S | Mecha Industries (Minimal Wear),AWP | Redline (Minimal Wear),AWP | Fever Dream (Minimal Wear),Desert Eagle | Kumicho Dragon (Minimal Wear),AWP | Medusa (Well-Worn),StatTrak™ AWP | Phobos (Minimal Wear),AWP | Redline (Field-Tested),StatTrak™ M4A4 | Desert-Strike (Factory New),AWP | Fever Dream (Field-Tested),UMP-45 | Blaze (Factory New),StatTrak™ UMP-45 | Primal Saber (Field-Tested),M4A4 | 龍王 (Dragon King) (Factory New),StatTrak™ P90 | Trigon (Minimal Wear),M4A4 | 龍王 (Dragon King) (Well-Worn),M4A4 | 龍王 (Dragon King) (Minimal Wear),M4A4 | Desolate Space (Well-Worn),★ Bayonet | Forest DDPAT (Well-Worn),AWP | Elite Build (Minimal Wear),★ Butterfly Knife | Forest DDPAT (Minimal Wear),StatTrak™ P250 | Asiimov (Well-Worn),M4A4 | Hellfire (Well-Worn),AK-47 | Aquamarine Revenge (Field-Tested),StatTrak™ M4A4 | 龍王 (Dragon King) (Field-Tested),M4A1-S | Hyper Beast (Well-Worn),M4A4 | Buzz Kill (Field-Tested),StatTrak™ M4A1-S | Decimator (Field-Tested),★ Huntsman Knife | Fade (Minimal Wear),AK-47 | Wasteland Rebel (Field-Tested),★ Bayonet | Slaughter (Minimal Wear),M4A1-S | Cyrex (Factory New),AWP | Asiimov (Battle-Scarred),StatTrak™ Desert Eagle | Conspiracy (Factory New),StatTrak™ M4A4 | 龍王 (Dragon King) (Minimal Wear),AWP | Medusa (Battle-Scarred),StatTrak™ M4A1-S | Atomic Alloy (Field-Tested),M4A4 | Desolate Space (Minimal Wear),StatTrak™ M4A4 | Desolate Space (Field-Tested),★ Karambit | Blue Steel (Field-Tested),StatTrak™ USP-S | Blueprint (Minimal Wear),StatTrak™ AWP | Hyper Beast (Well-Worn),AK-47 | Bloodsport (Field-Tested),AK-47 | Bloodsport (Minimal Wear),Glock-18 | Dragon Tattoo (Factory New),StatTrak™ FAMAS | Pulse (Factory New),StatTrak™ P250 | Splash (Minimal Wear),★ Flip Knife | Marble Fade (Factory New),AWP | Corticera (Factory New),M4A4 | Hellfire (Minimal Wear),StatTrak™ USP-S | Orion (Minimal Wear),StatTrak™ P90 | Trigon (Field-Tested),USP-S | Kill Confirmed (Well-Worn),M4A4 | Buzz Kill (Factory New),AWP | BOOM (Minimal Wear),USP-S | Orion (Minimal Wear),★ Karambit | Tiger Tooth (Factory New),M4A4 | Royal Paladin (Minimal Wear),SSG 08 | Dragonfire (Minimal Wear),★ Bayonet | Freehand (Minimal Wear),P250 | Mehndi (Factory New),M4A1-S | Decimator (Well-Worn),AK-47 | Neon Revolution (Minimal Wear),M4A1-S | Decimator (Battle-Scarred),AWP | Lightning Strike (Factory New),AK-47 | Fuel Injector (Factory New),StatTrak™ Desert Eagle | Crimson Web (Field-Tested),★ Shadow Daggers | Ultraviolet (Field-Tested),Five-SeveN | Hyper Beast (Minimal Wear),P250 | Asiimov (Minimal Wear),★ Shadow Daggers | Rust Coat (Battle-Scarred),StatTrak™ Desert Eagle | Cobalt Disruption (Factory New),AWP | Fever Dream (Factory New),AK-47 | Hydroponic (Minimal Wear),StatTrak™ AK-47 | Redline (Field-Tested),StatTrak™ Glock-18 | Royal Legion (Factory New),AWP | Oni Taiji (Minimal Wear),Sticker | iBUYPOWER | Cologne 2014,USP-S | Neo-Noir (Field-Tested),StatTrak™ AWP | Asiimov (Field-Tested),★ Gut Knife | Boreal Forest (Battle-Scarred),AK-47 | Vulcan (Minimal Wear),StatTrak™ AK-47 | Bloodsport (Factory New),M4A1-S | Decimator (Minimal Wear),★ Flip Knife,★ Bowie Knife | Case Hardened (Well-Worn),StatTrak™ Glock-18 | Water Elemental (Factory New),★ M9 Bayonet | Blue Steel (Field-Tested),P2000 | Fire Elemental (Minimal Wear),AUG | Anodized Navy (Factory New),StatTrak™ M4A4 | X-Ray (Minimal Wear),StatTrak™ CZ75-Auto | Xiangliu (Minimal Wear),★ Bowie Knife | Rust Coat (Battle-Scarred),M4A1-S | Mecha Industries (Factory New),SSG 08 | Blood in the Water (Minimal Wear),M4A1-S | Golden Coil (Minimal Wear),M4A1-S | Icarus Fell (Factory New)";
 var filterMin = 5;
 var filtefMax = 520;
+=======
+var serhtItem = "★ M9 Bayonet | Crimson Web (Minimal Wear),★ Butterfly Knife | Marble Fade (Factory New),★ Flip Knife | Lore (Minimal Wear),★ Huntsman Knife | Tiger Tooth (Factory New),★ Bowie Knife | Tiger Tooth (Factory New),★ Bayonet | Autotronic (Field-Tested),StatTrak™ AWP | Oni Taiji (Factory New),M4A4 | Poseidon (Minimal Wear),★ Falchion Knife | Tiger Tooth (Factory New),★ Bowie Knife | Marble Fade (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),4★ M9 Bayonet | Black Laminate (Battle-Scarred),★ Karambit | Damascus Steel (Factory New),★ Karambit | Lore (Field-Tested),★ StatTrak™ Butterfly Knife | Fade (Factory New),★ M9 Bayonet | Autotronic (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Bayonet | Slaughter (Field-Tested)";
+//Предметы для raffle
+var serchSkis = "★ M9 Bayonet | Lore (Factory new)";
+//Предметы для TSF
+var tradeskinsfastITEMS="StatTrak™ AWP | Fever Dream (Factory New),StatTrak™ FAMAS | Djinn (Factory New),StatTrak™ Desert Eagle | Kumicho Dragon (Field-Tested),M4A4 | Buzz Kill (Well-Worn),StatTrak™ AK-47 | Orbit Mk01 (Factory New),StatTrak™ P90 | Shallow Grave (Factory New),UMP-45 | Blaze (Factory New),StatTrak™ MP7 | Nemesis (Factory New),StatTrak™ AWP | Fever Dream (Minimal Wear),StatTrak™ AK-47 | Redline (Field-Tested),USP-S | Orion (Factory New),StatTrak™ AWP | Redline (Field-Tested),AK-47 | Frontside Misty (Minimal Wear),StatTrak™ P2000 | Fire Elemental (Field-Tested),AWP | BOOM (Minimal Wear),StatTrak™ P250 | Mehndi (Minimal Wear),AWP | Redline (Minimal Wear),StatTrak™ USP-S | Cyrex (Factory New),M4A1-S | Hot Rod (Factory New),StatTrak™ M4A4 | Desert-Strike (Minimal Wear),AWP | Asiimov (Battle-Scarred),M4A1-S | Golden Coil (Factory New),USP-S | Kill Confirmed (Well-Worn),StatTrak™ SG 553 | Cyrex (Minimal Wear),AK-47 | Redline (Minimal Wear),StatTrak™ M4A1-S | Decimator (Minimal Wear),StatTrak™ Desert Eagle | Conspiracy (Factory New),★ Flip Knife | Urban Masked (Well-Worn),SSG 08 | Dragonfire (Field-Tested),M4A4 | Hellfire (Minimal Wear),AWP | Graphite (Factory New),AWP | Hyper Beast (Field-Tested),AK-47 | Point Disarray (Field-Tested),USP-S | Kill Confirmed (Field-Tested),StatTrak™ Glock-18 | Water Elemental (Minimal Wear),StatTrak™ AK-47 | Blue Laminate (Minimal Wear),StatTrak™ USP-S | Cyrex (Minimal Wear),P250 | Asiimov (Minimal Wear),CZ75-Auto | Victoria (Factory New),StatTrak™ M4A4 | Desolate Space (Field-Tested),StatTrak™ P2000 | Imperial Dragon (Factory New),StatTrak™ P250 | Muertos (Factory New),StatTrak™ M4A1-S | Golden Coil (Field-Tested),AK-47 | Aquamarine Revenge (Field-Tested),AK-47 | Vulcan (Minimal Wear),AK-47 | Hydroponic (Field-Tested),M4A1-S | Cyrex (Factory New),AK-47 | Vulcan (Well-Worn),★ Falchion Knife | Rust Coat (Battle-Scarred),AWP | Hyper Beast (Battle-Scarred),AK-47 | Wasteland Rebel (Field-Tested),AK-47 | Fuel Injector (Battle-Scarred),StatTrak™ USP-S | Blueprint (Factory New),SSG 08 | Dragonfire (Factory New),AK-47 | Vulcan (Battle-Scarred),USP-S | Kill Confirmed (Minimal Wear),M4A4 | Asiimov (Battle-Scarred),AK-47 | Jaguar (Well-Worn),★ Falchion Knife | Boreal Forest (Battle-Scarred),StatTrak™ AK-47 | Orbit Mk01 (Field-Tested),AK-47 | Fuel Injector (Field-Tested),M4A1-S | Hyper Beast (Minimal Wear),SSG 08 | Blood in the Water (Minimal Wear),★ Flip Knife,StatTrak™ USP-S | Caiman (Factory New),StatTrak™ Glock-18 | Water Elemental (Factory New),AK-47 | Fuel Injector (Well-Worn),AK-47 | Bloodsport (Factory New)";
+var filterMin = 0;
+var filtefMax = 2000;
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 =======
 var serhtItem = "★ M9 Bayonet | Crimson Web (Minimal Wear),★ Butterfly Knife | Marble Fade (Factory New),★ Flip Knife | Lore (Minimal Wear),★ Huntsman Knife | Tiger Tooth (Factory New),★ Bowie Knife | Tiger Tooth (Factory New),★ Bayonet | Autotronic (Field-Tested),StatTrak™ AWP | Oni Taiji (Factory New),M4A4 | Poseidon (Minimal Wear),★ Falchion Knife | Tiger Tooth (Factory New),★ Bowie Knife | Marble Fade (Factory New),★ Butterfly Knife | Crimson Web (Minimal Wear),4★ M9 Bayonet | Black Laminate (Battle-Scarred),★ Karambit | Damascus Steel (Factory New),★ Karambit | Lore (Field-Tested),★ StatTrak™ Butterfly Knife | Fade (Factory New),★ M9 Bayonet | Autotronic (Field-Tested),★ Butterfly Knife | Tiger Tooth (Factory New),★ Bayonet | Slaughter (Field-Tested)";
 //Предметы для raffle
@@ -35,7 +45,11 @@ var steamWindow;
 	if(location.href.indexOf("raffletrades")>-1){
 		console.log("Is Work");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		raffle();
+=======
+		//raffl();
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 =======
 		//raffl();
 >>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
@@ -98,8 +112,12 @@ var steamWindow;
 		//var header = document.getElementById("mainmenu");
 		//header.innerHTML += "<li><div class='onoffswitch'><input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked onchange='work(this.checked)'><label class='onoffswitch-label' for='myonoffswitch'><span class='onoffswitch-inner'></span><span class='onoffswitch-switch'></span></label></div></li>";
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		
+=======
+
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 =======
 
 >>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
@@ -274,6 +292,7 @@ function checkOnTrySkins(){
 	//alert('Название: '+ itemName +' Стоит: '+countItem);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 var refreshInventory;
 var checkTradeConfirmInterval;
 
@@ -357,6 +376,12 @@ var refreshInventory;
 var checkTradeConfirmInterval;
 
 >>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
+=======
+
+var refreshInventory;
+var checkTradeConfirmInterval;
+
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 var tradeskinsfastInterval ; 
 
 var price;
@@ -384,6 +409,7 @@ function loadAllSkins(){
 		loadAllItemsBots.scrollTop = loadAllItemsBots.scrollHeight;
 		price = loadAllItemsBots.childNodes[loadAllItemsBots.childNodes.length-1].getElementsByClassName("price")[0].innerHTML.split("$")[1]*1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		lengthSkins = loadAllItemsBots.childNodes.length;
 		
 		//startPosition = loadAllItemsBots.childNodes.length;
@@ -405,6 +431,15 @@ function loadAllSkins(){
 		var ok = price - filterMin;
 		if(ok < 15){
 			clearInterval(setInt);
+=======
+		//lengthSkins = loadAllItemsBots.childNodes.length;
+		//tradeskinsfastCheck();
+		//startPosition = loadAllItemsBots.childNodes.length;
+		//console.log(price)
+		var ok = price - filterMin;
+		if(ok < 15){
+			clearInterval(setInt);
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 			lengthSkins = 0;
 			tradeskinsfastCheck();
 			startPosition = loadAllItemsBots.childNodes.length;
@@ -440,7 +475,12 @@ function tradeskinsfastCheck(){
 	}
 	if (reloadSite) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//setTimeout(reloadInventari(),11000);
+=======
+		console.log(" ПЕРЕЗАГРУЗИТЬ  ");
+		setTimeout(reloadInventari(),11000);
+>>>>>>> cacfd3335b1b1263f18ee842ffb7b2797e615841
 =======
 		console.log(" ПЕРЕЗАГРУЗИТЬ  ");
 		setTimeout(reloadInventari(),11000);
